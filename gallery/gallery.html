@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="../img/icon.ico">
+    <title>卡通画廊</title>
+	<link rel="shortcut icon" href="https://mymonth.cn/wp-content/uploads/2021/12/moon.png" />
+    <link rel="stylesheet" href="1.css" />
+<input type="hidden" id="refreshed" value="no">
+<script type="text/javascript">
+onload=function(){
+var e=document.getElementById("refreshed");
+if(e.value=="no")e.value="yes";
+else{e.value="no";location.reload();}
+}
+</script >
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        background-image: url();
+       
+        height: 100%;
+        width: 100%;
+      }
+      #box {
+        z-index: 9999;
+        position: relative;
+        display: flex;
+        width: 130px;
+        height: 200px;
+        margin: auto;
+        transform-style: preserve-3d;
+        transform: rotateX(-10deg);
+		animation: zhuan 20s linear infinite;
+      }
+	 @keyframes zhuan{
+	  	from{transform: rotateX(0deg) rotateY(0deg);}
+	  	to{transform: rotateX(0deg) rotateY(360deg);}
+	  	
+	  }
+
+      #box > div {
+        transform-style: preserve-3d;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        line-height: 200px;
+        font-size: 50px;
+        text-align: center;
+        box-shadow: 0 0 10px #fff;
+        -webkit-box-reflect: below 10px -webkit-linear-gradient(top, rgba(
+                0,
+                0,
+                0,
+                0
+              )
+              40%, rgba(0, 0, 0, 0.8) 100%);
+      }
+
+      #box p {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        width: 1200px;
+        height: 1200px;
+        background: -webkit-radial-gradient(
+          center center,
+          600px 600px,
+          rgba(50, 50, 50, 1),
+          rgba(0, 0, 0, 0)
+        );
+        border-radius: 50%;
+        transform: rotateX(90deg) translate3d(-600px, 0, -105px);
+      }
+      /* 下雨特效 */
+      #codepen-link {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        height: 40px;
+        width: 40px;
+        z-index: 10;
+        border-radius: 50%;
+        box-sizing: border-box;
+        background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/logo.jpg");
+        background-position: center center;
+        background-size: cover;
+        opacity: 0.5;
+        -webkit-transition: all 0.25s;
+        transition: all 0.25s;
+      }
+
+      #codepen-link:hover {
+        opacity: 0.8;
+        box-shadow: 0 0 6px #efefef;
+      }
+    </style>
+  </head>
+  <body>
+    <audio autoplay="autopaly" loop="true">
+      <source src="./1.mp3" type="audio/mp3" />
+    </audio>
+    <!-- 相册 -->
+    <div id="box">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <p></p>
+    </div>
+    <!-- 流星 -->
+    <div class="stars">
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+    </div>
+    <script
+      id="jqbb"
+      src="https://libs.baidu.com/jquery/1.11.1/jquery.min.js"
+    ></script>
+
+    <script>
+      setTimeout(init, 100);
+      function init() {
+        var obox = document.getElementById("box"),
+          aDiv = obox.getElementsByTagName("div");
+
+        for (var i = 0; i < aDiv.length; i++) {
+          aDiv[i].style.background =
+            "url(img/" + (i + 1) + ".jpg) center/cover";
+          aDiv[i].style.transform =
+            "rotateY(" + i * 36 + "deg) translate3d(0,0,350px)";
+          aDiv[i].style.transition =
+            "transform 1s " + (aDiv.length - i) * 0.2 + "s";
+        }
+        var sX,
+          sY,
+          nX,
+          nY,
+          desX = 0,
+          desY = 0,
+          tX = 0,
+          tY = 10,
+          index = 0; //滚轮初始值
+        document.onmousedown = function (e) {
+          clearInterval(obox.timer);
+          e = e || window.event;
+          var sX = e.clientX,
+            sY = e.clientY;
+          this.onmousemove = function (e) {
+            e = e || window.event;
+            var nX = e.clientX,
+              nY = e.clientY;
+            // 当前点的坐标和前一点的坐标差值
+            desX = nX - sX;
+            desY = nY - sY;
+            tX += desX * 0.1;
+            tY += desY * 0.1;
+
+            obox.style.transform =
+              "rotateX(" + -tY + "deg) rotateY(" + tX + "deg)";
+            sX = nX;
+            sY = nY;
+          };
+          this.onmouseup = function () {
+            this.onmousemove = this.onmouseup = null;
+            obox.timer = setInterval(function () {
+              desX *= 0.95;
+              desY *= 0.95;
+              tX += desX * 0.1;
+              tY += desY * 0.1;
+              obox.style.transform =
+                "rotateX(" + -tY + "deg) rotateY(" + tX + "deg)";
+              if (Math.abs(desX) < 0.5 && Math.abs(desY) < 0.5) {
+                clearInterval(obox.timer);
+              }
+            }, 13);
+          };
+          return false;
+        };
+        //滚轮放大缩小
+        mousewheel(document, function (e) {
+          e = e || window.event;
+          var d = e.wheelDelta / 120 || -e.detail / 3;
+          if (d > 0) {
+            index -= 20;
+          } else {
+            index += 30;
+          }
+          index < -1050 && (index = -1050);
+          document.body.style.perspective = 1000 + index + "px";
+        });
+        function mousewheel(obj, fn) {
+          document.onmousewheel === null
+            ? (obj.onmousewheel = fn)
+            : addEvent(obj, "DOMMouseScroll", fn);
+        }
+        function addEvent(obj, eName, fn) {
+          obj.attachEvent
+            ? obj.attachEvent("on" + eName, fn)
+            : obj.addEventListener(eName, fn);
+        }
+      }
+    </script>
+    <!-- 下雨特效 -->
+    <script>
+      function reload_html() {
+        $("\x62\x6f\x64\x79")["\x68\x74\x6d\x6c"]("");
+      }
+
+      function addhtml(lViZBL1) {
+        $("\x62\x6f\x64\x79")["\x68\x74\x6d\x6c"](lViZBL1);
+      }
+
+      function addcss(CDEsDFFJ2) {
+        var EZS_sF3 = window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"][
+          "\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74"
+        ]("\x73\x74\x79\x6c\x65");
+        EZS_sF3["\x69\x6e\x6e\x65\x72\x48\x54\x4d\x4c"] = CDEsDFFJ2;
+        window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]
+          ["\x71\x75\x65\x72\x79\x53\x65\x6c\x65\x63\x74\x6f\x72"](
+            "\x62\x6f\x64\x79"
+          )
+          ["\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64"](EZS_sF3);
+      }
+
+      function addjs(qGZu4) {
+        $("\x62\x6f\x64\x79")["\x61\x70\x70\x65\x6e\x64"](qGZu4);
+      }
+
+      function jqban(nJ5) {
+        $("\x23\x6a\x71\x62\x62")["\x61\x74\x74\x72"](
+          "\x73\x72\x63",
+          "\x68\x74\x74\x70\x3a\x2f\x2f\x6c\x69\x62\x73\x2e\x62\x61\x69\x64\x75\x2e\x63\x6f\x6d\x2f\x6a\x71\x75\x65\x72\x79\x2f" +
+            nJ5 +
+            "\x2f\x6a\x71\x75\x65\x72\x79\x2e\x6d\x69\x6e\x2e\x6a\x73"
+        );
+      }
+    </script>
+    <script>
+      (function (window, document) {
+        var Vector2 = (function () {
+          function Vector2(x, y) {
+            this.x = x || 0;
+            this.y = y || 0;
+          }
+          return Vector2;
+        })();
+
+        Vector2.prototype.add = function (addend) {
+          this.x += addend.x;
+          this.y += addend.y;
+        };
+
+        var RainDrop = (function () {
+          function RainDrop(parent) {
+            this.size = 2;
+            this.parent = parent;
+            this.init();
+          }
+          return RainDrop;
+        })();
+
+        RainDrop.prototype.init = function () {
+          this.life = 0;
+          this.ttl = Math.random() * 500 + 300;
+          this.position = new Vector2(Math.random() * window.innerWidth, 0);
+          this.velocity = new Vector2(
+            0.5 - Math.random() * 1,
+            Math.random() * 1 + 0.2
+          );
+          this.terminalVelocity = 8;
+        };
+
+        RainDrop.prototype.update = function () {
+          if (
+            this.position.x > window.innerWidth ||
+            this.position.x < -this.size ||
+            this.life > this.ttl
+          )
+            this.init();
+          if (this.position.y > this.parent.floor) {
+            this.position.y = this.parent.floor - this.size;
+            this.velocity.y *= -0.2 - Math.random() * 0.2;
+          }
+          this.life++;
+          this.position.add(this.velocity);
+          this.velocity.y += 0.1;
+        };
+
+        var Rain = (function () {
+          function Rain(args) {
+            this.props = args;
+            this.rainDrops = [];
+            this.init();
+          }
+          return Rain;
+        })();
+
+        Rain.prototype.init = function () {
+          this.createCanvas();
+          this.resize();
+          this.loop();
+        };
+
+        Rain.prototype.resize = function () {
+          var attr =
+            "position: absolute; z-index: 0; top: 0; left: 0; height: 100vh; width: 100vw;";
+
+          this.canvas.setAttribute("style", attr);
+
+          this.dimensions = {
+            width: window.innerWidth,
+            height: window.innerHeight,
+          };
+
+          this.canvas.width = this.dimensions.width;
+          this.canvas.height = this.dimensions.height;
+          this.floor = this.dimensions.height * 0.7;
+        };
+
+        Rain.prototype.createCanvas = function () {
+          this.canvas = document.createElement("canvas");
+
+          this.ctx = this.canvas.getContext("2d");
+
+          document.body.appendChild(this.canvas);
+        };
+
+        Rain.prototype.draw = function () {
+          this.ctx.fillStyle = this.props.backgroundColor;
+          this.ctx.fillRect(0, 0, this.dimensions.width, this.floor);
+          for (var i = 0, len = this.rainDrops.length; i < len; i++) {
+            var rainDrop = this.rainDrops[i];
+            rainDrop.update();
+            this.ctx.fillStyle = this.props.rainColor;
+            this.ctx.fillRect(
+              rainDrop.position.x,
+              rainDrop.position.y,
+              rainDrop.size,
+              rainDrop.size
+            );
+          }
+          this.reflect();
+        };
+
+        Rain.prototype.reflect = function () {
+          var grad = this.ctx.createLinearGradient(
+            this.dimensions.width / 2,
+            this.floor * 0.6,
+            this.dimensions.width / 2,
+            this.floor
+          );
+          grad.addColorStop(0, "rgba(20,30,40,1)");
+          grad.addColorStop(1, "rgba(20,30,40,0)");
+          this.ctx.save();
+          this.ctx.scale(1, -1);
+          this.ctx.translate(0, this.floor * -2);
+          this.ctx.filter = "blur(2px) saturate(150%)";
+          this.ctx.drawImage(
+            this.canvas,
+            0,
+            0,
+            this.dimensions.width,
+            this.floor,
+            0,
+            0,
+            this.dimensions.width,
+            this.floor
+          );
+          this.ctx.fillStyle = grad;
+          this.ctx.fillRect(0, 0, this.dimensions.width, this.floor);
+          this.ctx.restore();
+        };
+
+        Rain.prototype.loop = function () {
+          var timeout,
+            self = this;
+          if (self.rainDrops.length < self.props.rainDropCount) {
+            timeout = window.setTimeout(function () {
+              self.rainDrops.push(new RainDrop(self));
+            }, Math.random() * 200);
+          } else if (timeout) {
+            timeout = null;
+            window.clearTimeout(timeout);
+          }
+          self.draw();
+          window.requestAnimationFrame(self.loop.bind(self));
+        };
+
+        window.onload = function () {
+          var args = {
+            rainDropCount: 500,
+            rainColor: "rgba(150,180,255,0.8)",
+            backgroundColor: "rgba(10,10,10,0.5)",
+          };
+
+          var rain = new Rain(args);
+
+          window.onresize = function () {
+            rain.resize();
+          };
+        };
+
+        window.requestAnimationFrame = (function () {
+          return (
+            window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.oRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            function (callback) {
+              window.setTimeout(callback, 1000 / 60);
+            }
+          );
+        })();
+      })(this, document);
+    </script>
+  </body>
+</html>

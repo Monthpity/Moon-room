@@ -1,0 +1,352 @@
+.dsCountDown:after{
+	content:'';
+    clear: both;
+}
+
+.dsCountDown{
+    display:inline-block;
+	*display: inline;
+    zoom: 1;
+}
+
+/* ------------------------- White Theme ------------------------- */
+.dsCountDown.ds-white {
+	color: #000;
+	position: relative;
+	font-size: 1em;
+	padding: 10px;
+	border: 1px solid #dedede;
+	border-radius: 2px;
+	
+	background: #ffffff; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZGVkZWQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #ffffff 0%, #ededed 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#ededed 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#ededed 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffffff 0%,#ededed 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-8 */
+}
+
+.ds-white .ds-element {
+	float: left;
+	margin-right: 10px;
+	text-align: center;
+	border-right: 1px solid #dedede;
+	padding-right: 10px;
+}
+
+.dsCountDown.ds-white > .ds-element.ds-element-seconds {
+	margin-right: 0;
+	padding-right: 0;
+	border-right: 0;
+}
+
+.ds-white .ds-element-title {
+	font-size: 0.8em;
+	text-transform: lowercase;
+}
+
+.ds-white .ds-element-value {
+	font-size: 2.5em;
+	color: #333;
+	text-shadow: 2px 2px 0px #fff;
+}
+
+
+
+/* ------------------------- Black Theme ------------------------- */
+.dsCountDown.ds-black {
+	color: #fff;
+    position: relative;
+    font-size: 1em;
+    padding: 50px 0 30px;
+    border-radius: 2px;
+	width: 100%;
+	margin: 8% 0px;
+}
+
+.ds-black .ds-element {
+	float: left;
+    text-align: center;
+    border-right: 3px solid green;
+    border-left: 3px solid green;
+    padding-right: 10px;
+    width: 23%;
+    background: rgba(0,0,0,0.29);
+    border-radius: 60px;
+}
+
+
+
+.ds-black .ds-element-title {
+	    font-size: 0.25em;
+    text-transform: uppercase;
+    margin: 15px 0;
+	font-family: 'Poiret One', cursive;
+
+}
+
+.ds-black .ds-element-value {
+	font-size: 1em;
+	color: #fff;
+	text-shadow: 0px -2px 0px #222;
+}
+
+
+
+/* ------------------------- Red Theme ------------------------- */
+.dsCountDown.ds-red {
+	color: #fff;
+	position: relative;
+	font-size: 1em;
+	padding: 10px;
+	border: 1px solid #A80000;
+	border-radius: 2px;
+	
+	background: #ff0000; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmMDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNiYzAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #ff0000 0%, #bc0000 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff0000), color-stop(100%,#bc0000)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ff0000 0%,#bc0000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ff0000 0%,#bc0000 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ff0000 0%,#bc0000 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ff0000 0%,#bc0000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#bc0000',GradientType=0 ); /* IE6-8 */
+
+
+}
+
+.ds-red .ds-element {
+	float: left;
+	margin-right: 10px;
+	text-align: center;
+	border-right: 1px solid #BC0000;
+	padding-right: 10px;
+}
+
+.dsCountDown.ds-red > .ds-element.ds-element-seconds{
+	margin-right: 0;
+	padding-right: 0;
+	border-right: 0;
+}
+
+.ds-red .ds-element-title {
+	font-size: 0.8em;
+	text-transform: lowercase;
+}
+
+.ds-red .ds-element-value {
+	font-size: 2.5em;
+	color: #fff;
+	text-shadow: 0px -1px 0px #555;
+}
+
+
+
+/* ------------------------- Flat Theme ------------------------- */
+.dsCountDown.ds-flat {
+	color: #000;
+	position: relative;
+	font-size: 1em;
+	border: 1px solid #cdcdcd;
+	background: #efefef;
+	box-shadow: 4px 4px 4px #888;
+}
+
+.ds-flat .ds-element {
+	float: left;
+	text-align: center;
+	border-right: 1px solid #dedede;
+	padding: 7px 17px;
+}
+
+.dsCountDown.ds-flat > .ds-element.ds-element-seconds {
+	border-right: 0;
+}
+
+.ds-flat .ds-element-title {
+	font-size: 0.8em;
+	text-transform: lowercase;
+	color: #666;
+}
+
+.ds-flat .ds-element-value {
+	font-size: 2.5em;
+	color: #000;
+}
+
+/*-- responsive media queries --*/
+@media (max-width: 1280px){ 
+	.ds-black .ds-element-value {
+		font-size: 0.95em;
+	}
+	.ds-black .ds-element{
+		width:22%;
+	}
+	.dsCountDown.ds-black {
+		margin: 10% 0px;
+	}
+}
+@media (max-width: 1080px){
+	.ds-black .ds-element-value {
+		font-size: 0.9em;
+	}
+	.dsCountDown.ds-black {
+		padding: 20px 0 10px;
+		margin: 9% 0px;
+	}
+}
+@media (max-width: 1024px){
+	.dsCountDown.ds-black {
+		top:102%
+	}
+}
+@media (max-width: 960px){
+	.ds-black .ds-element-value {
+		font-size: 0.7em;
+	}
+	.ds-black .ds-element-title {
+		font-size: 0.24em;
+	}
+	.dsCountDown.ds-black {
+		margin: 7% 0px;
+	}
+}
+@media (max-width: 800px){
+	.ds-black .ds-element-value {
+		font-size: 0.5em;
+	}
+	.ds-black .ds-element-title {
+		font-size: 0.23em;
+		margin: 9px 0;
+	}
+	.ds-black .ds-element {
+		width: 21%;
+	}
+	.dsCountDown.ds-black {
+		margin: 0% 0px;
+	}
+}
+@media (max-width: 768px){
+	.ds-black .ds-element-value {
+		font-size: 0.9em;
+	}
+	.dsCountDown.ds-black {
+		margin: 10% 0px;
+	}
+	.ds-black .ds-element-title {
+		font-size: 0.3em;
+		margin: 10% 0;
+	}
+}
+@media (max-width: 736px){
+	.dsCountDown.ds-black {
+		padding: 0px;
+		margin: 5% 0px;
+	}
+	.ds-black .ds-element-value {
+		font-size: 0.6em;
+	}
+}
+@media (max-width: 667px){
+	.dsCountDown.ds-black {
+		padding: 30px 0 20px;
+	}
+	.dsCountDown.ds-black {
+		padding: 0px;
+		margin: 5% 0%;
+	}
+	.ds-black .ds-element-value {
+		font-size: 0.7em;
+	}
+}
+@media (max-width: 640px){
+	.dsCountDown.ds-black {
+		padding: 40px 0 5px;
+	}
+}
+@media (max-width: 600px){
+	.dsCountDown.ds-black {
+		padding: 20px 0 5px;
+	}
+	.ds-black .ds-element-title {
+		font-size: 0.24em;
+	}
+}
+@media (max-width: 568px){
+	.ds-black .ds-element {
+		width: 21%;
+	}
+	.ds-black .ds-element-value {
+		font-size: 0.5em;
+	}
+	.dsCountDown.ds-black {
+		margin: 4% 0px;
+		padding: 0px;
+	}
+	.ds-black .ds-element-title {
+		font-size: 0.2em;
+		margin: 5% 0;
+	}
+}
+@media (max-width: 414px){
+	.ds-black .ds-element {
+		width: 42%;
+		margin-bottom: 10px;
+	}
+	.dsCountDown.ds-black {
+		padding: 50px 0 20px;
+	}
+	.ds-black .ds-element-value {
+		font-size: 0.8em;
+	}
+	
+}
+@media (max-width: 384px){
+	.ds-black .ds-element-value {
+		font-size: 0.7em;
+	}
+	.dsCountDown.ds-black {
+		padding: 30px 0 10px;
+	}
+	.ds-black .ds-element {
+		margin-bottom: 10px;
+	}
+}
+@media (max-width: 375px){
+	.dsCountDown.ds-black {
+		padding: 50px 0 20px;
+	}
+	.ds-black .ds-element-value {
+		font-size: 0.8em;
+	}
+	.ds-black .ds-element {
+		margin-bottom: 10px;
+	}
+}
+@media (max-width: 360px){
+	.dsCountDown.ds-black {
+		padding: 40px 0 10px;
+	}
+	.ds-black .ds-element {
+		margin-bottom: 10px;
+	}
+}
+@media (max-width: 320px){
+	.ds-black .ds-element-value {
+		font-size: 0.5em;
+	}
+	.ds-black .ds-element {
+		margin-bottom: 10px;
+	}
+	.dsCountDown.ds-black {
+		padding: 10px 0 0px;
+	}
+}
+
+/*-- //responsive media queries --*/
+
