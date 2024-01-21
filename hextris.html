@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<title>Hextris</title>
+		<meta name="apple-itunes-app" content="app-id=903769553"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui"/>
+		<link rel="shortcut icon" href="img/icon.ico">
+		<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+		<link rel="stylesheet" type="text/css" href="style/style.css">
+		<script type='text/javascript' src="js/hextris/hammer.min.js"></script>
+		<script type='text/javascript' src="js/hextris/js.cookie.js"></script>
+		<script type='text/javascript' src="js/hextris/jsonfn.min.js"></script>
+		<script type='text/javascript' src="js/hextris/keypress.min.js"></script>
+		<script type='text/javascript' src="js/hextris/jquery.js"></script>
+		<script type='text/javascript' src="js/hextris/save-state.js"></script>
+		<script type='text/javascript' src="js/hextris/view.js"></script>
+		<script type='text/javascript' src="js/hextris/wavegen.js"></script>
+		<script type='text/javascript' src="js/hextris/math.js"></script>
+		<script type='text/javascript' src="js/hextris/Block.js"></script>
+		<script type='text/javascript' src="js/hextris/Hex.js"></script>
+		<script type='text/javascript' src="js/hextris/Text.js"></script>
+		<script type='text/javascript' src="js/hextris/comboTimer.js"></script>
+		<script type='text/javascript' src="js/hextris/checking.js"></script>
+		<script type='text/javascript' src='js/hextris/update.js'></script>
+		<script type='text/javascript' src='js/hextris/render.js'></script>
+		<script type='text/javascript' src="js/hextris/input.js"></script>
+		<script type='text/javascript' src="js/hextris/main.js"></script>
+		<script type='text/javascript' src="js/hextris/initialization.js"></script>
+		<script src="js/hextris/sweet-alert.min.js"></script>
+
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+		<div id="overlay" class="faded overlay"></div>
+		<div id='startBtn' ></div>
+		<div id="helpScreen" class='unselectable'>
+			<div id='inst_main_body'></div>
+		</div>
+		<img id="openSideBar" class='helpText' src="./images/btn_help.svg"/>
+		<div class="faded overlay"></div>
+		<img id="pauseBtn" src="./images/btn_pause.svg"/>
+		<img id='restartBtn' src="./images/btn_restart.svg"/>
+		<div id='HIGHSCORE'>HIGH SCORE</div>
+		
+		<div id='highScoreInGameText'>
+			<div id='highScoreInGameTextHeader'>HIGH SCORE</div><div id='currentHighScore'>10292</div>
+		</div>
+		<div id="gameoverscreen">
+			<div id='container'>
+				<div id='gameOverBox' class='GOTitle'>GAME OVER</div>
+				<div id='cScore'>1843</div>
+				<div id='highScoresTitle' class='GOTitle'>HIGH SCORES</div>
+				<div class='score'><span class='scoreNum'>1.</span> <div id="1place" style="display:inline;">0</div></div>
+				<div class='score'><span class='scoreNum'>2.</span> <div id="2place" style="display:inline;">0</div></div>
+				<div class='score'><span class='scoreNum'>3.</span> <div id="3place" style="display:inline;">0</div></div>
+			</div>
+			<div id='bottomContainer'>
+				<img id='restart' src='./images/btn_restart.svg' height='57px'>
+				<div id='socialShare'>
+					<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+					<svg width="224.6377px" height="57px"  viewBox="0 0 255 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<title>Share button</title>
+						<defs>
+						</defs>
+						<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+							<g id="Game-over-" sketch:type="MSArtboardGroup" transform="translate(-95.000000, -565.000000)">
+								<g id="Share-button" sketch:type="MSLayerGroup" transform="translate(95.000000, 565.000000)">
+								
+									
+								</g>
+							</g>
+						</g>
+					</svg>
+				</div>
+				<div id='buttonCont'>
+					<ul class="rrssb-buttons">
+						
+						
+				</ul>
+					
+				</div>
+			</div>
+		</div>
+			
+
+	</body>
+</html>

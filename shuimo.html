@@ -1,0 +1,316 @@
+
+<HTML>
+ <head>
+  <TITLE> 水墨画</TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+	<link rel="shortcut icon" href="img/icon.ico">
+  <style>
+  @import url(https://fonts.googleapis.com/css?family=Poiret+One);
+html {
+	overflow: hidden;
+	touch-action: none;
+	content-zooming: none;
+}
+body {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	background: #111;
+	width: 100%;
+	height: 100%;
+}
+#canvas {
+	width: 100%; 
+	height: 100%;
+	background: #fff;
+	position: absolute;
+}
+#text {
+	position:absolute;
+	left:0;
+	bottom:10px;
+	width:100%;
+	pointer-events:  none;
+}
+
+#text div {
+	position:absolute;
+	color:#888;
+	left:0;
+	width:100%;
+	text-align:center;
+	top:-32px;
+	font-family: 'Poiret One', cursive;
+	font-size:32px;
+}
+  </style>
+ </head>
+
+ <BODY>
+ <canvas id="canvas"></canvas>
+<div id="text">
+	<div id="clic" nowrap>this pen is mouse/touch interactive</div>
+</div>
+  <script>
+  ! function () {
+
+	"use strict";
+
+	// branch constructor
+
+	function Branch (parent, level, x, y) {
+
+		this.parent = parent;
+		this.branches = [];
+		this.p0 = parent ? parent.p1 : new Point(x, y);
+		this.p1 = new Point(x, y);
+		this.level = level;
+		this.life = 20;
+		this.angle = 0;
+		this.vx = 0;
+		this.vy = 0;
+
+	}
+
+	// grow branch
+
+	Branch.prototype.grow = function () {
+
+		// recursively grow children branches
+
+		for (var i = 0; i < this.branches.length; i++) {
+
+			this.branches[i].grow();
+
+		}
+
+		// grow branch
+
+		if (this.life > 1) {
+
+			this.p1.x += this.vx;
+			this.p1.y += this.vy;
+
+			ctx.beginPath();
+			ctx.lineCap = "round";
+
+			if (this.level) {
+
+				// draw branch
+
+				ctx.lineWidth = this.level * 6 - 5;
+				ctx.strokeStyle = "#000";
+
+				if (this.parent) {
+
+					ctx.moveTo(this.parent.p0.x, this.parent.p0.y);
+					ctx.quadraticCurveTo(this.p0.x, this.p0.y, this.p1.x, this.p1.y);
+
+				}
+
+				ctx.stroke();
+
+			} else {
+
+				// draw leaf
+
+				ctx.lineWidth = 10;
+				ctx.strokeStyle = "#f40";
+				ctx.moveTo(this.p0.x, this.p0.y);
+				ctx.lineTo(this.p1.x, this.p1.y);
+				ctx.stroke();
+
+			}
+		}
+
+		// create sub branches
+
+		if (this.life === 1 && this.level > 0 && this.level < maxLevels) {
+
+			this.branches.push(newBranch(this));
+			this.branches.push(newBranch(this));
+
+		}
+
+		// decrement branch life
+
+		this.life--;
+
+	}
+
+	// point 2D constructor
+
+	function Point (x, y) {
+
+		this.x = x;
+		this.y = y;
+
+	}
+
+	// new branch factory
+
+	function newBranch (parent) {
+
+		var branch = new Branch (parent, parent.level - 1, parent.p1.x, parent.p1.y);
+
+		branch.angle = (autorun && parent.level === maxLevels) ? Math.random() * 2 * Math.PI : Math.atan2(
+			parent.p1.y - parent.p0.y, 
+			parent.p1.x - parent.p0.x 
+		) + (Math.random() * 1.4 - 0.7);
+
+		branch.vx = Math.cos(branch.angle) * 12;
+		branch.vy = Math.sin(branch.angle) * 12;
+
+		branch.life = branch.level === 1 ? 5 : Math.round(Math.random() * (branch.level * 2)) + 2;
+
+		return branch;
+
+	}
+
+	// main animation loop
+
+	function run () {
+
+		// request next frame
+
+		requestAnimationFrame(run);
+
+		// clear screen (with a bit of magic)
+
+		if (++frame % 2) {
+
+			ctx.globalCompositeOperation = "lighter";
+			ctx.fillStyle = "rgba(255,255,255,0.01)";
+			ctx.fillRect(0, 0, canvas.width, canvas.height);
+			ctx.globalCompositeOperation = "source-over";
+		}
+
+		// follow the pointer
+
+		current.p1.x = pointer.x;
+		current.p1.y = pointer.y;
+
+		// grow tree
+
+		root.grow();
+
+		// create trunk branches
+
+		if ((autorun && Math.random() > 0.8) || pointer.moveDistance > 20) {
+
+			pointer.moveDistance = 0;
+			var branch = new Branch (current, current.level, current.p1.x, current.p1.y);
+			current.branches.push(branch);
+
+			if (Math.random() > 0.8) current.branches.push(newBranch(current));
+
+			current = branch;
+			nBranches++;
+			
+		}
+
+		// cut the tree
+
+		if (nBranches > maxBranches) {
+
+			root = root.branches[0];
+			nBranches--;
+
+		}
+
+	}
+
+
+	// prepare the canvas
+
+	var canvas = {
+		elem: document.getElementById('canvas'),
+		width: 0,
+		height: 0,
+		resize: function () {
+			this.width  = this.elem.width  = this.elem.offsetWidth;
+			this.height = this.elem.height = this.elem.offsetHeight;
+		}
+	}
+
+	var ctx = canvas.elem.getContext("2d");
+	canvas.elem.onselectstart = function() { return false; }
+	canvas.elem.ondragstart = function() { return false; }
+	window.addEventListener('resize', canvas.resize.bind(canvas), false);
+	canvas.resize();
+
+	// pointer events
+	var pointer = {
+
+		x:  canvas.width * 0.5, 
+		y:  canvas.height * 0.5,
+		px: 0,
+		py: 0,
+		moveDistance: 0,
+
+		move: function (e) {
+
+			e.preventDefault();
+			var pointer = e.targetTouches ? e.targetTouches[0] : e;
+
+			this.x = pointer.clientX;
+			this.y = pointer.clientY;
+
+			var dx = this.x - this.px;
+			var dy = this.y - this.py;
+
+			this.moveDistance += Math.sqrt(dx * dx + dy * dy);
+
+			// speed limit
+
+			if (this.moveDistance > 40) {
+
+				this.x = this.px + dx * 0.1;
+				this.y = this.py + dy * 0.1;
+				
+			}
+
+
+			// cancel autorun
+
+			if (autorun) {
+
+				this.x  = pointer.clientX;
+				this.y  = pointer.clientY;
+				root = new Branch (false, maxLevels, this.x, this.y);
+				current = root;
+				autorun = false;
+				document.getElementById("clic").innerHTML = "";
+
+			}
+
+			this.px = this.x;
+			this.py = this.y;
+
+		}
+	}
+
+	window.addEventListener("mousemove", pointer.move.bind(pointer), false );
+	canvas.elem.addEventListener("touchmove", pointer.move.bind(pointer), false );
+
+	// variables
+	
+	var maxLevels = 7;
+	var nBranches = 0;
+	var maxBranches = 200;
+	var autorun = true;
+	var frame = 0;
+	var root = new Branch (false, maxLevels, pointer.x, pointer.y);
+	var current = root;
+
+	// start
+
+	run();
+
+}();
+  </script>
+ </BODY>
+</HTML>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Musical Christmas Lights</title>
+  <link rel="shortcut icon" href="img/icon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./css/christmas/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.115.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.115.0/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.115.0/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.115.0/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.115.0/examples/js/shaders/CopyShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.115.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.115.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+
+<div id="overlay">
+  <ul>
+    <li class="title">Select Music</li>
+    <li>
+      <button class="btn" id="btnA" type="button">
+        Snowflakes Falling Down by Simon Panrucker
+      </button>
+    </li>
+    <li><button class="btn" id="btnB" type="button">This Christmas by Dott</button></li>
+    <li><button class="btn" id="btnC" type="button">No room at the inn by TRG Banks</button></li>
+    <li><button class="btn" id="btnD" type="button">Jingle Bell Swing by Mark Smeby</button></li>
+    <li class="separator">OR</li>
+    <li>
+      <input type="file" id="upload" hidden />
+      <label for="upload">Upload File</label>
+    </li>
+  </ul>
+</div>
+<!-- partial -->
+  <script  src="./js/christmas/script.js"></script>
+
+</body>
+</html>
