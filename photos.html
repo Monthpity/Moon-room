@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>照片</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/css/main.css" />
+  <link rel="shortcut icon" href="img/icon.ico">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/css/noscript.css" />
+  </noscript>
+</head>
+
+<body class="is-preload">
+  <!-- Wrapper -->
+  <div id="wrapper">
+    <!-- Header -->
+    <header id="header">
+      <h1><a href="https://github.com/Monthpity/Moon"><strong>Moonの相册</strong> </a></h1>
+      <nav>
+        <ul>
+          <li><a href="https://cmymoon.com" class="">返回主页</a></li>
+          <li><a href="#footer" class="icon solid fa-info-circle">关于</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Main -->
+    <div id="main">
+    </div>
+    <!-- Footer -->
+    <footer id="footer" class="panel">
+      <div class="inner split">
+        <div>
+          <section>
+            <h2>介绍</h2>
+            <p>Moon的相册共有<span id="count_CN"></span>张图片哦，人生的每一帧都值得记录。</p>
+          </section>
+          <section>
+            <ul class="icons">
+              <!-- <li><a href="https://gitee.com/wrongcode" class="icon brands fa-github" target="_blank"><span
+                    class="label">Gitee</span></a></li> -->
+              <li><a href="https://github.com/Monthpity/" class="icon brands fa-github" target="_blank"><span
+                    class="label">GitHub</span></a></li>
+            </ul>
+          </section>
+          <p class="copyright"> &copy; 2024 <a href="https://github.com/Monthpity/Moon"> &middot; Monthpity</a> . </p>
+        </div>
+        <div>
+          <section>
+            <h2>关于Moon的相册</h2>
+            <p>不是每个人都能成为摄影师，但好的摄影作品可以出自任何人。<br />我最喜欢摄影中你无法预期的下一刻。</p>
+          </section>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script type="text/javascript">
+    var datas = `风景,2024年03月5日,https://pic.imgdb.cn/item/658ed7d7c458853aef11c990.png
+                 风景,2024年03月5日,https://pic.imgdb.cn/item/64fbbe2d661c6c8e54d9722a.png
+                 风景,2024年03月5日,https://pic.imgdb.cn/item/64fbd82a661c6c8e54de9137.png
+                 风景,2024年03月5日,https://pic.imgdb.cn/item/64fe75b5661c6c8e545e36b5.jpg
+                 风景,2024年03月5日,https://pic.imgdb.cn/item/659e5f6b871b83018a1ccb06.png
+                 风景,2024年03月5日,https://pic.imgdb.cn/item/65a0fcef871b83018af6fda9.png
+                 风景,2024年03月5日,https://pic.imgdb.cn/item/65a355a2871b83018a4365f0.png
+                 风景,2024年03月5日,https://pic.imgdb.cn/item/65a78b1f871b83018a1e8dfc.png
+                 风景,2024年03月5日,https://pic.imgdb.cn/item/65ac7a61871b83018a9aa87f.png
+                 风景,2024年03月5日,https://pic.imgdb.cn/item/65b077f6871b83018a13a584.png
+                 风景,2024年03月5日,https://pic.imgdb.cn/item/65baf6fc871b83018a05b0aa.png
+    
+    
+    `;
+    datas = datas.split("\n");
+    for (var i = 0; i < datas.length; i++) {
+      datas[i] = datas[i].split(",");
+    }
+
+    function creatArticle(datas) {
+      var parent = document.getElementById("main");
+      for (var i = 0; i < datas.length; i++) {
+        var article = document.createElement("article");
+        article.className = "thumb";
+        parent.appendChild(article);
+        var a = document.createElement("a");
+        a.className = "image";
+        a.href = datas[i][2];
+        article.appendChild(a);
+        var img = document.createElement("img");
+        img.src = datas[i][2]; // + "?x-oss-process=image/resize,w_640/quality,q_85"
+        a.appendChild(img);
+        var h2 = document.createElement("h2");
+        h2.innerHTML = datas[i][0];
+        article.appendChild(h2);
+        var p = document.createElement("p");
+        p.innerHTML = datas[i][1];
+        article.appendChild(p);
+      }
+    }
+    creatArticle(datas);
+    document.getElementById("count_CN").innerHTML = datas.length;
+  </script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/jquery.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/jquery.poptrox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/browser.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/breakpoints.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/util.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/main.js"></script>
+</body>
+
+</html>
