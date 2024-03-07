@@ -838,11 +838,12 @@ ul.skill li .progress div {
 }
 
 @font-face {
-    font-family: "simsun"; /* 自定义字体的名字 */
-    src: url("../fonts/simsun.ttc") format("truetype"); /* 字体文件的路径和格式 */
+	font-family: "simsun"; /* 自定义字体的名字 */
+	src: url("../fonts/simsun.ttc"); /* 字体文件的路径和格式 */
   }
 
   body {
-    font-family: "simsun", sans-serif;
+    font-family: "simsun";
   }
+
 /*# sourceMappingURL=/h.9c69ed6c.css.map */
