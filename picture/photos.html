@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>相册</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/css/main.css" />
+  <link rel="shortcut icon" href="img/icon.ico">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/css/noscript.css" />
+  </noscript>
+</head>
+
+<body class="is-preload">
+  <!-- Wrapper -->
+  <div id="wrapper">
+    <!-- Header -->
+    <header id="header">
+      <h1><strong>Moonの相册</strong> </a></h1>
+      <nav>
+        <ul>
+      
+          <li><a href="https://cmymoon.com" target="_blank"><i class="fas fa-home"></i> 返回主页</a></li>
+          <li><a href="./else/index.html"><i class="fas fa-folder"></i>其他</a></li>
+          <li><a href="#footer"><i class="fas fa-user"></i> 关于</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Main -->
+    <div id="main">
+    </div>
+    <!-- Footer -->
+    <footer id="footer" class="panel">
+      <div class="inner split">
+        <div>
+          <section>
+            <h2>控制台</h2>
+            <p>Moon的相册共有<span id="count_CN"></span>张图片哦，人生的每一帧都值得记录。</p>
+          </section>
+          <section>
+            <ul class="icons">
+              <!-- <li><a href="https://gitee.com/wrongcode" class="icon brands fa-github" target="_blank"><span
+                    class="label">Gitee</span></a></li> -->
+              <li><a href="https://github.com/Monthpity/" class="icon brands fa-github" target="_blank"><span
+                    class="label">GitHub</span></a></li>
+            </ul>
+          </section>
+          <p class="copyright"> &copy; 2024 <a href="https://github.com/Monthpity"> &middot; Monthpity</a></p>
+        </div>
+        <div>
+          <section>
+            <h2>关于Moon的相册</h2>
+            <p>不是每个人都能成为摄影师，但好的摄影作品可以出自任何人。<br />我最喜欢摄影中你无法预期的下一刻。</p>
+          </section>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script type="text/javascript">
+    var datas = `动漫风景,2024年03月5日<br/>喜欢的一张,https://picture.cmymoon.com/background/0.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/1.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/2.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/3.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/4.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/5.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/6.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/7.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/8.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/9.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/10.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/11.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/12.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/13.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/14.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/15.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/18.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/19.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/21.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/24.webp
+                 动漫风景,2024年03月5日,https://picture.cmymoon.com/background/25.webp`;
+
+                 
+    datas = datas.split("\n");
+    for (var i = 0; i < datas.length; i++) {
+      datas[i] = datas[i].split(",");
+    }
+
+    function creatArticle(datas) {
+      var parent = document.getElementById("main");
+      for (var i = 0; i < datas.length; i++) {
+        var article = document.createElement("article");
+        article.className = "thumb";
+        parent.appendChild(article);
+        var a = document.createElement("a");
+        a.className = "image";
+        a.href = datas[i][2];
+        article.appendChild(a);
+        var img = document.createElement("img");
+        img.src = datas[i][2]; // + "?x-oss-process=image/resize,w_640/quality,q_85"
+        a.appendChild(img);
+        var h2 = document.createElement("h2");
+        h2.innerHTML = datas[i][0];
+        article.appendChild(h2);
+        var p = document.createElement("p");
+        p.innerHTML = datas[i][1];
+        article.appendChild(p);
+      }
+    }
+    creatArticle(datas);
+    document.getElementById("count_CN").innerHTML = datas.length;
+  </script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/jquery.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/jquery.poptrox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/browser.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/breakpoints.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/util.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/main.js"></script>
+</body>
+
+</html>
