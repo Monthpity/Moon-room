@@ -89,12 +89,19 @@
             <img src="./yulan/YL-3.webp"/>
         </a>
     </td>
+    </tr>
  <!-- 第二行 -->
     <tr>
     <td valign="top">
         <a target="_blank" href="https://room.cmymoon.com/Aircraft-war/index.html">
             <p align="center">Aircraft-War</p>
             <img src="./yulan/YL-4.webp"/>
+        </a>
+    </td>
+    <td valign="top">
+    <a target="_blank" href="https://room.cmymoon.com/Avoiding-obstacles.html">
+    <p align="center">躲避障碍</p>
+     <img src="./yulan/YL-5.webp"/>
         </a>
     </td>
     </tr>
