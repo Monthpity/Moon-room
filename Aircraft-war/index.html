@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../img/icon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飞机大战</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div id="startScreen">
+            <button id="startButton" style="display: none;">开始游戏</button>
+        </div>
+        <div id="gameOverScreen">
+            <h2>游戏结束</h2>
+            <p>分数: <span id="finalScore"></span></p>
+            <button id="restartButton">再来一次</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
