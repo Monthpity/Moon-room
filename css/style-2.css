@@ -838,12 +838,12 @@ ul.skill li .progress div {
 }
 
 
-*{
-	cursor: url("../mouse/alternate.cur"),auto!important;
+body{
+	cursor: url("../mouse/alternate.cur"),auto;
   }
   
 a {
-	cursor: url("../mouse/link.cur"),auto!important;
+	cursor: url("../mouse/link.cur"),pointer;
   }
 
 
