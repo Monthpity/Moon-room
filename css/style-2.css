@@ -836,13 +836,26 @@ ul.skill li .progress div {
         letter-spacing: .2em
     }
 }
-  @font-face {
-    font-family: "Stsong"; /* 自定义字体的名字 */
-    src: url("../fonts/Stsong.ttf") format("truetype"); /* 字体文件的路径和格式 */
+
+
+*{
+	cursor: url("../mouse/alternate.cur"),auto!important;
+  }
+  
+a {
+	cursor: url("../mouse/link.cur"),auto!important;
   }
 
-/*   body {
+
+  @font-face {
+    /* 自定义字体的名字 */
+    font-family: "Stsong"; 
+   /* 字体文件的路径和格式 */
+    src: url("../fonts/Stsong.ttf") format("truetype");
+  }
+
+  /* body {
     font-family: "Stsong", sans-serif;
-  } */
+  }  */
   
-/*# sourceMappingURL=/h.9c69ed6c.css.map */
+/*# sourceMappingURL=/h.9c69ed6c.css.map
