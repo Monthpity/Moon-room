@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>相册</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/css/main.css" /> -->
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/font-awesome-animation.min.css">  <!-- 动态图标CSS -->
+  <link rel="shortcut icon" href="../../img/icon.ico">
+  <noscript>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/css/noscript.css" /> -->
+    <link rel="stylesheet" href="../css/noscript.css" />
+  </noscript>
+</head>
+
+<body class="is-preload">
+    <!-- Header -->
+    <header id="header">
+
+      <a href="index.html"><img class="site-logo" src="../images/favicon.png"></a>
+      <h1><a href="index.html"><strong>Moon</strong></h1></a>
+      <span class="discription">一些喜欢的照片</span>
+      <nav>
+        <ul>
+          <li><a href="../index.html" target="_blank" class="faa-parent animated-hover"><i class="fas fa-home faa-vertical"></i> 首页</a></li>
+        <li class='nav-item'>
+          <a class="icon solid fa-info-circle nav-item-name"> <i class="fas fa-list"></i> 分类</a>
+       <ul class="nav-item-child">
+      <ul><li class="category-level-0 category-parent"><a href="../index.html" class="faa-parent animated-hover"><i class="fas fa-image faa-spin"></i> 动漫风景</a></li> </ul>
+          <li class="category-level-0 category-parent"><a href="../else/index.html" class="faa-parent animated-hover"><i class="fas fa-splotch faa-spin faa-reverse"></i> 其他</a></li> </ul>
+
+          <li><a href="#footer" class="faa-parent animated-hover"><i class="fas fa-user faa-flash"></i> 关于</a></li>
+      
+          <li><a type="button" id="fullscreen" class="btn btn-default visible-lg visible-md" alt="切换全屏"><svg  class="icon-zmki zmki_dh zmki_wap" aria-hidden="true"><use xlink:href="#icon-zmki-ziyuan-copy"></use></svg></a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Main -->
+    <div id="wrapper">
+      <div id="main">
+           <article class="thumb img-area">
+           <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/students/jingjing.jpg" >
+           <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/students/jingjing.jpg"   />
+           </a> 
+           <h2>曹静静</h2>
+           <p>2024年04月1日<br>
+              生活不是一种宿命而是一种选择！
+           <!-- </p>
+           <li class="tag-categorys"><a href="">同学</a></li> -->
+           </article>
+
+          <article class="thumb img-area">
+           <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/students/ke.jpg" >
+           <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/students/ke.jpg"   />
+           </a> 
+           <h2>潘瑞柯</h2>
+           <p>2024年04月1日<br>
+            一重山有一重山的错落，我有我的平仄。
+           </p>
+           </article>
+
+    
+
+      </div>
+   </div>
+</div>
+
+    
+    <!-- Footer -->
+    <footer id="footer" class="panel">
+      <div class="inner split">
+        <div class="inner split">
+        <div>
+            <section>
+              <h2>关于同学录</h2>
+              <p>岁月如梭，但我们的友情却历久弥坚，像照片中那些定格的美好时刻一样，永远珍藏在心底。每一次相聚都是一次珍贵的礼物，每一次告别都是一次暂别的承诺。<br>
+                让我们一起翻开这本相册，重温那些青涩的岁月，感受那份深厚的情谊，让友情的火焰在岁月的长河中愈发明亮，照亮我们前行的路途。</p>
+            </section>
+         
+
+          <section style="margin-bottom: 1.8rem;">
+            <h2>联系我</h2>
+            <ul class="icons">	
+              <li><a href="https://www.cmymoon.com"  target="_blank" class="iconfont faa-parent animated-hove"><span class="fas fa-home faa-vertical"></span></a></li>
+              <li><a href="https://github.com/Monthpity/"  target="_blank" class="iconfont faa-parent animated-hove"><span class="fab fa-github faa-vertical"></span></a></li>
+              <li><a href="https://cmymoon.com"  target="_blank" class="iconfont faa-parent animated-hove"><span class="fas fa-blog faa-ring"></span></a></li>
+          </section> 
+          
+          <!-- <section>
+            <ul class="icons">
+              <li><a href="https://gitee.com/wrongcode" class="icon brands fa-github" target="_blank"><span
+                    class="label">Gitee</span></a></li>
+              <li><a href="https://github.com/Monthpity/"  target="_blank"><span
+                    class="label fab fa-github"></span></a></li>
+            </ul>
+          </section> -->
+          <p class="copyright"> &copy; 2024 <a href="https://github.com/Monthpity"> &middot; Monthpity</a></p>
+        </div>
+    
+      </div>
+    </div>
+  </div>
+    </footer>
+ 
+
+  <script type="text/javascript">
+    function isInSight(el) {
+      const bound = el.getBoundingClientRect();
+      const clientHeight = window.innerHeight;
+      //如果只考虑向下滚动加载
+      //const clientWidth=window.innerWeight;
+      return bound.top <= clientHeight + 100;
+    }
+    
+    let index = 0;
+    function checkImgs() {
+      const imgs = document.querySelectorAll('.my-photo');
+      for (let i = index; i < imgs.length; i++) {
+        if (isInSight(imgs[i])) {
+          loadImg(imgs[i]);
+          index = i;
+        }
+      }
+      // Array.from(imgs).forEach(el => {
+      //   if (isInSight(el)) {
+      //     loadImg(el);
+      //   }
+      // })
+    }
+    
+    function loadImg(el) {
+      if (!el.src) {
+        const source = el.dataset.src;
+        el.src = source;
+      }
+    }
+    
+    function throttle(fn, mustRun = 10) {
+      const timer = null;
+      let previous = null;
+      return function() {
+        const now = new Date();
+        const context = this;
+        const args = arguments;
+        if (!previous) {
+          previous = now;
+        }
+        const remaining = now - previous;
+        if (mustRun && remaining >= mustRun) {
+          fn.apply(context, args);
+          previous = now;
+        }
+      }
+    }
+         </script>
+          <script>
+        window.onload=checkImgs;
+        window.onscroll = throttle(checkImgs);
+      </script>
+    </div> 
+
+  <!-- Scripts -->
+  <!-- <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/jquery.min.js"></script> -->
+  <script src="../js/jquery.min.js"></script>
+  <!-- <script
+    src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/jquery.poptrox.min.js"></script> -->
+    <script src="../js/jquery.poptrox.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/browser.min.js"></script> -->
+  <script src="../js/browser.min.js"></script>
+  <!-- <script
+    src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/breakpoints.min.js"></script> -->
+    <script src="../js/breakpoints.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/util.js"></script> -->
+  <script src="../js/util.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/main.js"></script> -->
+  <script src="../js/main.js"></script>
+  <script src="../js/font_1635479_m8o2ir6mitf.js"></script>
+</body>
+
+</html>
