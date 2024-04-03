@@ -136,7 +136,7 @@ li {
 /*手机端适配  常规尺寸*/
 @media (max-width:768px) {
   .zmki_px {
-    background-image: url(20200212-6dafa53ecf4e3.gif);
+    background-image: url(../images/1.gif);
     background-size: 100% 100%;
   }
 }
@@ -144,7 +144,7 @@ li {
 /*iphone X 适配*/
 @media only screen and (device-width:375px) and (device-height:812px) and (-webkit-device-pixel-ratio:3) {
   .zmki_px {
-    background-image: url(20200212-38ce26bb0bd0d.gif);
+    background-image: url(../images/2.gif);
     background-size: 100% 100%;
   }
 }
@@ -153,7 +153,7 @@ li {
 @media only screen and (device-width:375px) and (device-height:667px) {
 
   .zmki_px {
-    background-image: url(20200212-e056a5f2914d6.gif);
+    background-image: url(../images/3.gif);
     background-size: 100% 100%;
   }
 }
