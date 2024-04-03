@@ -1861,6 +1861,13 @@ body.is-preload #header {
   padding-left: 0;
 }
 
+
+.nav-background:hover{
+  background: var(--heo-theme);
+
+}
+
+
 li.category-level-0.category-parent {
   width: 100%;
   text-align: center;
@@ -2423,3 +2430,5 @@ body.is-preload #main .thumb {
 #footer .copyright a {
   color: inherit;
 }
+
+
