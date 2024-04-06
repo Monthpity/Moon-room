@@ -1864,7 +1864,7 @@ body.is-preload #header {
 
 .nav-background:hover{
   background: var(--heo-theme);
-
+  border-radius: 20px;
 }
 
 
@@ -1881,6 +1881,7 @@ li.category-level-0.category-parent {
 
 .nav-item .category-parent:hover {
   background: var(--heo-theme);
+  border-radius: 10px;
 }
 
 .nav-item:hover .nav-item-child {
