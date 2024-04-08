@@ -141,7 +141,7 @@
     </td>
     <td valign="top">
         <a target="_blank" href="https://room.cmymoon.com/web-multiterminal-preview/index.html">
-            <p align="center">ToDoList</p>
+            <p align="center">Web多端展示</p>
             <img src="./yulan/else-5.webp"/>
     </a>
     </td>
