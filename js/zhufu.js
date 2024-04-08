@@ -24,7 +24,7 @@ var S = {
     if (i !== -1) {
       S.UI.simulate(decodeURI(action).substring(i + 3));
     } else {
-      S.UI.simulate('|#countdown 3|宇|新年快乐|祝你|在|新的一年|抱着平安|拥着健康|揣着幸福|携着快乐|带着财运|拽着吉祥|迈入新年|快乐度过|每一天|❤|');
+      S.UI.simulate('|#countdown 3|宇|愿你|抱着平安|拥着健康|揣着幸福|携着快乐|搂着温馨|带着甜蜜|牵着财运|拽着吉祥|快乐度过|每一天!|❤|');
     }
 
     S.Drawing.loop(function () {
