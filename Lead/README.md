@@ -4,4 +4,4 @@
 
 预览图：
 
-![预览图](/img/yulan.png)
+![预览图](./img/yulan.png)
