@@ -63,6 +63,12 @@
             <img src="./yulan/8.webp"/>
         </a>
     </td>
+    <td valign="top">
+        <a target="_blank" href="https://room.cmymoon.com/sky/index.html">
+            <p align="center">天空有多高</p>
+            <img src="./yulan/9.webp"/>
+        </a>
+    </td>
     </tr>
 </table>
 
@@ -102,6 +108,12 @@
     <a target="_blank" href="https://room.cmymoon.com/Avoiding-obstacles.html">
     <p align="center">躲避障碍</p>
      <img src="./yulan/YL-5.webp"/>
+        </a>
+    </td>
+    <td valign="top">
+    <a target="_blank" href="https://room.cmymoon.com/tetris/index.html">
+    <p align="center">俄罗斯方块</p>
+     <img src="./yulan/YL-6.webp"/>
         </a>
     </td>
     </tr>
