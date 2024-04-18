@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>俄罗斯方块</title>
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="Play a free TETRIS game online. It is unblocked and will never get old." />
+    <meta name="keywords" content="tetris, tetris game, tetris online, play tetris">
+    <meta name="format-detection" content="telephone=no"/>
+    <script>;(function(){var w=parseInt(window.screen.width),s=w/640,u=navigator.userAgent.toLowerCase(),m='<meta name="viewport" content="width=640,';if(/android (\d+\.\d+)/.test(u)){if(parseFloat(RegExp.$1)>2.3)m+='minimum-scale='+s+',maximum-scale='+s+',';}else{m+='user-scalable=no,';}m+='target-densitydpi=device-dpi">';document.write(m);}());</script>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="俄罗斯方块，俄罗斯方块小游戏，果汁导航，在线游戏，小游戏，手游，网游，guozhivip.com" />
+    <meta name="description" content="【俄罗斯方块】是一款经典简单的在线小游戏，好玩易上手，根本停不下来。" />
+    <link href="loader.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" href="http://guozhivip.com/apple-touch-icon.png">
+    <link href="css-2.0.2.5.css" rel="stylesheet"></head>
+    <link rel="Shortcut Icon" href="../img/icon.ico" type="image/x-icon" />
+<body>
+      <div id="root">
+          <div class="load">
+              <div class="loader">Loading...</div>
+          </div>
+      </div>
+<script type="text/javascript" src="app-2.0.2.5.js"></script></body>
+<script>
+    document.oncontextmenu = function (event){
+    if(window.event){
+    event = window.event;
+    }try{
+    var the = event.srcElement;
+    if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+    return false;
+    }
+    return true;
+    }catch (e){
+    return false;
+    }
+    }
+  </script>
+  <script>
+    document.onkeydown = function(){
+
+      if(window.event && window.event.keyCode == 123) {
+          alert("Hi,Welcome to here！");
+          event.keyCode=0;
+          event.returnValue=false;
+      }
+      if(window.event && window.event.keyCode == 13) {
+          window.event.keyCode = 505;
+      }
+      if(window.event && window.event.keyCode == 8) {
+          alert(str+"\n请使用Del键进行字符的删除操作！");
+          window.event.returnValue=false;
+      }
+    }
+  </script>
+
+    <script type="text/javascript">
+    if (self == top) {
+        var theBody = document.getElementsByTagName('body')[0];
+        theBody.style.display = "block";
+    } else {
+        top.location = self.location;
+    }
+  </script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?dc7c5f392985b55eaa94c4f26e653924";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</html>
