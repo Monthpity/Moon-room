@@ -10,7 +10,7 @@
     <!-- 第一行 -->
     <tr>
     <td valign="top">
-        <a target="_blank" href="https://room.cmymoon.com/picture/photos.html">
+        <a target="_blank" href="https://room.cmymoon.com/picture/index.html">
             <p align="center">相册</p>
             <img src="./yulan/1.webp"/>
         </a>
