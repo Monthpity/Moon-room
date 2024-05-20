@@ -1,704 +1,468 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moonの个人主页</title>
-    <link rel="stylesheet" href="./css/style.css">  <!--  主页CSS -->
-    <link rel="icon" type="image/x-icon" href="img/favicon.webp">
-    <link rel="apple-touch-icon" href="img/favicon.webp">
-    <meta name="apple-mobile-web-app-title" content="Leonus">
-    <link rel="bookmark" href="img/favicon.webp">
-    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="img/favicon.webp">
-    <meta name="theme-color" content="#1C1C1F">
-     <link rel="stylesheet" href="./css/all.min.css"> <!-- 图标CSS -->
-    <link rel="stylesheet" href="./css/font-awesome-animation.min.css">  <!-- 动态图标CSS -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/font.js"></script>
+  <title>相册</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/css/main.css" /> -->
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/font-awesome-animation.min.css">  <!-- 动态图标CSS -->
+  <link rel="shortcut icon" href="../img/icon.ico">
+  <noscript>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/css/noscript.css" /> -->
+    <link rel="stylesheet" href="./css/noscript.css" />
+  </noscript>
 </head>
 
-<div id="body">
-    <div class="nav top">
-        <div class="nav-content">
-            <div class="nav-left">
-                <a href="javascript:scrollToTopWithAnimation()" class="site-logo">
-                    <img src="img/favicon.webp" alt="logo" class="site-logo-img">
-                    <span class="site-name">Moon</span>
-                </a>
-            </div>
-            <div class="nav-right animated-hover">
-                <a href="javascript:scrollToTopWithAnimation()" class="nav-item faa-parent animated-hover"><i class="fas fa-home faa-ring"></i> 首页</a>
-                <a href="javascript:heoWeb.scrollTo('博客');" class="nav-item faa-parent animated-hover"><i class="fas fa-book faa-wrench"></i> 博客</a>
-                <a href="javascript:heoWeb.scrollTo('欣赏');" class="nav-item faa-parent animated-hover"><i class="fas fa-cannabis faa-horizontal"></i> 欣赏</a>
-                <a href="javascript:heoWeb.scrollTo('相册');" class="nav-item faa-parent animated-hover"><i class="fas fa-image faa-spin"></i> 相册</a>
-                <a href="javascript:heoWeb.scrollTo('娱乐');" class="nav-item faa-parent animated-hover"><i class="fas fa-arrows-alt faa-shake"></i> 娱乐</a>
-                <a href="javascript:heoWeb.scrollTo('AI');" class="nav-item faa-parent animated-hover"><i class="fas fa-robot faa-tada"></i> AI</a>
-                <a href="javascript:heoWeb.scrollTo('项目');" class="nav-item faa-parent animated-hover"><i class="fas fa-archive faa-flash"></i> 项目</a>
-                <a href="javascript:heoWeb.scrollTo('小屋');" class="nav-item faa-parent animated-hover"><i class="fas fa-splotch faa-spin faa-reverse"></i> 小屋</a>           
-                <a href="javascript:heoWeb.scrollTo('社交');" class="nav-item faa-parent animated-hover"><i class="fas fa-user-circle faa-vertical"></i> 社交</a>
-                <a href="javascript:heoWeb.scrollTo('技能');" class="nav-item faa-parent animated-hover"><i class="fas fa-tools faa-float"></i> 技能</a>
-                <a class="nav-menu" id="nav-menu"><i class="fas fa-list "></i>  </a>
-                <!-- <span class="iconfont icon-caidan"></span> -->
-            </div>
-        </div>
-</div>
-    <div class="menu-list" id="menu-list">
-        <a href="javascript:scrollToTopWithAnimation()" class="nav-item faa-parent animated-hover"><i class="fas fa-home faa-ring"></i> 首页</a>
-        <a href="javascript:heoWeb.scrollTo('博客');" class="nav-item faa-parent animated-hover"><i class="fas fa-book faa-wrench"></i> 博客</a>
-        <a href="javascript:heoWeb.scrollTo('欣赏');" class="nav-item faa-parent animated-hover"><i class="fas fa-cannabis faa-horizontal"></i> 欣赏</a>
-        <a href="javascript:heoWeb.scrollTo('相册');" class="nav-item faa-parent animated-hover"><i class="fas fa-image faa-spin"></i> 相册</a>
-        <a href="javascript:heoWeb.scrollTo('娱乐');" class="nav-item faa-parent animated-hover"><i class="fas fa-arrows-alt faa-shake"></i> 娱乐</a>
-        <a href="javascript:heoWeb.scrollTo('AI');" class="nav-item faa-parent animated-hover"><i class="fas fa-robot faa-tada"></i> AI</a>
-        <a href="javascript:heoWeb.scrollTo('项目');" class="nav-item faa-parent animated-hover"><i class="fas fa-archive faa-flash"></i> 项目</a>
-        <a href="javascript:heoWeb.scrollTo('小屋');" class="nav-item faa-parent animated-hover"><i class="fas fa-splotch faa-spin faa-reverse"></i> 小屋</a>
-        <a href="javascript:heoWeb.scrollTo('社交');" class="nav-item faa-parent animated-hover"><i class="fas fa-user-circle faa-vertical"></i> 社交</a>
-        <a href="javascript:heoWeb.scrollTo('技能');" class="nav-item faa-parent animated-hover"><i class="fas fa-tools faa-float"></i> 技能</a>
-    </div>
-    <div class="nav-banner">
-        <a class="nav-banner-text" href="/" target="_blank"> Moon祝你天天开心哦！ </a>
-    </div>
+<body class="is-preload">
+    <!-- Header -->
+    <header id="header">
 
-    <!-- <a id="go-top" href="javascript:scrollToTopWithAnimation()">
-        <span class="iconfont icon-xiangyou1"></span>
-    </a> -->
+      <a href="./index.html"><img class="site-logo" src="./images/favicon.png"></a>
+      <h1><a href="./index.html"><strong>Moon</strong></h1></a>
+      <span class="discription">一些喜欢的照片</span>
+      <nav>
+        <ul>
+          <li><a href="https://www.cmymoon.com" class="nav-background faa-parent animated-hover"><i class="fas fa-home faa-vertical"></i> 主页</a></li>
 
-    <div class="first-stack need-padding">
-        <div class="left-Introduce">
-            <div class="title-group gradientText">
-                <span class="title Englishfont">Moonの<span class="inline-word">HomePage</span>.</span>
-                <span class="title">心之所想,<span class="inline-word">心之所向</span>。</span>
-            </div>
-            <div class="discription">
-                <span class="discription-text gradientText-2 Englishfont">The heart wants what the heart wants.</span>
-            </div>
+        <li class='nav-item'> <a class="icon solid fa-info-circle nav-item-name"> <i class="fas fa-list"></i> 分类</a>
+       <ul class="nav-item-child">
+      <ul><li class="category-level-0 category-parent"><a href="./scenery/index.html" class="faa-parent animated-hover"><i class="fas fa-images faa-passing faa-reverse"></i> 动漫风景</a></li></ul> 
+      
+        <li class="category-level-0 category-parent"><a href="./life/index.html" class="faa-parent animated-hover"><i class="fas fa-cannabis faa-horizontal"></i> 生活点滴</a></li>
+        <!-- <li class="category-level-0 category-parent"><a href="./students/index.html" class="faa-parent animated-hover"><i class="fas fa-user-graduate faa-wrench"></i> 同学录</a></li>--></ul>
+           
+          <li><a href="#footer" class="nav-background animated-hover"><i class="fas fa-user faa-flash"></i> 关于</a></li>
+      
+          <li><a type="button" id="fullscreen" class="btn btn-default visible-lg visible-md" alt="切换全屏"><svg  class="icon-zmki zmki_dh zmki_wap" aria-hidden="true"><use xlink:href="#icon-zmki-ziyuan-copy"></use></svg></a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Main -->
+    <div id="wrapper">
+      <div id="main">
+           <article class="thumb img-area">
+           <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/0.webp" >
+           <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/0.webp"   />
+           </a> 
+           <h2>01</h2>
+           <p>2024年03月5日<br>喜欢的一张</p>
+           <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+           </article>
 
-            <div class="first-stack-links">
-            <a href="javascript:heoWeb.scrollTo('博客');" class="about-button social-button faa-parent animated-hover"><i class="fas fa-arrow-down faa-ring"></i></a>
-            <a href="https://github.com/Monthpity" class="about-button social-button faa-parent animated-hover" target="_blank">
-                <i class="fab fa-github faa-ring"></i>
-              </a>
-              <a href="https://cmymoon.com" class="about-button social-button faa-parent animated-hover" target="_blank">
-                <i class="fas fa-blog faa-ring"></i>
-              </a>
-        </div>
-    </div>
-        <div class="right-stack">
-            <img class="banner-img" src="img/cover.webp" alt="banner" title="banner">
-            <img class="banner-img-logo" src="img/favicon.webp" alt="banner" title="banner">
-        </div> 
-    </div>
-    </div>
+          <article class="thumb img-area">
+           <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/1.webp" >
+           <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/1.webp"   />
+           </a> 
+           <h2>02</h2>
+           <p>2024年03月5日</p>
+           <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+           </article>
 
-    <div class="avatar-discription">
+           <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/2.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/2.webp"   />
+            </a> 
+            <h2>03</h2>
+            <p>2024年03月5日</p>
+            <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+            </article>
 
-        <span class="avatar-discription-text">
-            <p>
-                我不算谁的附庸，也不是某段的支流河。比起这些，<b>我更想成为顷刻间的滂沱，旷野里乍起的风波。又或者，唐朝遗风外景着的唯一月色，</b><br>
-                人生本身就是一首待写的诗歌。而他们的文字浅薄，不该被潦草的印刷着，所以在我笔下，<b>一重山有一重山的错落，我有我的平仄。</b>
-              </p>
-        </span>
-        <div class="avatar-info">
-          <img class="avatar-image" src="img/wolf.jpg">
-          <span class="avatar-name">Moon</span>
-          <span class="avatar-title Englishfont">Ordinary Student</span>
-        </div>
-      </div>
+          <article class="thumb img-area">
+           <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/4.webp" >
+           <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/4.webp"   />
+           </a> 
+           <h2>04</h2>
+           <p>2024年03月5日</p>
+           <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+           </article>
 
-    <!-- 博客 -->
-    <div class="product-banner" id="博客"style="background-image: linear-gradient(180deg, #274DFF 0%, #00FFFF 100%);">
-        <div class="banner-info need-padding">
-            <span class="title">个人博客</span>
-            <div class="banner-discription-group">
-                <span class="description">基于 Hexo 框架的纯静态博客平台</span>
-                <span class="description">基于 Matery 主题进行了优化</span>
-                <span class="description">托管在Github平台利用Vercel进行加速。</span>
-            </div>
-            <div class="link-group">
-                <a class="primary-button" target="_blank" href="https://cmymoon.com/">点击进入</a>
-                <!-- <a class="primary-button" target="_blank" href="https://room.cmymoon.com/">Moonの小屋</a> -->
-            </div>
-        </div>
-        <div class="banner-pic">
-            <img class="banner-pic-img" src="img/blog.webp" alt="banner image">
-        </div>
-    </div>
-            <!--欣赏 -->
-            <div class="product-group need-padding" id="欣赏">
-                <h2 class="group-title">欣赏</h2>
-                <span class="group-description">一些小项目</span>
-                <div class="group-items">
+          <article class="thumb img-area">
+           <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/5.webp" >
+           <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/5.webp"   />
+           </a> 
+           <h2>05</h2>
+           <p>2024年03月5日</p>
+           <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+           </article>
 
-                    <!-- 古诗词 -->
-                    <div class="group-item">
-                        <a class="group-item-icon" href="https://room.cmymoon.com/gushi.html" target="_blank" rel="noopener nofollow">
-                            <img class="group-item-icon-img" src="img/gushi.svg" alt="Gushi-icon" title="Gushi">
-                        </a>
-                        <div class="group-info-group">
-                            <div class="group-info">
-                                <a class="title" href="https://room.cmymoon.com/gushi.html" target="_blank" rel="noopener nofollow">古诗词
-                        </a>
-                                <a class="discription" href="https://room.cmymoon.com/gushi.html" target="_blank" rel="noopener nofollow">腹有诗书气自华</a>
-                            </div>
-                            <div class="group-info-button">
-                                <a class="linkbutton" href="https://room.cmymoon.com/gushi.html" target="_blank" rel="noopener nofollow">前往</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 水墨画 -->
-                    <div class="group-item">
-                        <a class="group-item-icon" href="https://room.cmymoon.com/shuimo.html" target="_blank" rel="noopener nofollow">
-                            <img class="group-item-icon-img" src="img/hua.svg" alt="Shuimo-icon" title="Shuimo">
-                        </a>
-                        <div class="group-info-group">
-                            <div class="group-info">
-                                <a class="title" href="https://room.cmymoon.com/shuimo.html" target="_blank" rel="noopener nofollow">水墨画</a>
-                                <a class="discription" href="https://room.cmymoon.com/shuimo.html" target="_blank" rel="noopener nofollow">山水如墨染</a>
-                            </div>
-                            <div class="group-info-button">
-                                <a class="linkbutton" href="https://room.cmymoon.com/shuimo.html" target="_blank" rel="noopener nofollow">前往</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 烟花 -->
-                    <div class="group-item">
-                        <a class="group-item-icon" href="https://room.cmymoon.com/Firework_Simulator-main/index.html" target="_blank" rel="noopener nofollow">
-                            <img class="group-item-icon-img" src="img/yanhua.svg" alt="Yanhua-icon" title="Yanhua">
-                        </a>
-                        <div class="group-info-group">
-                            <div class="group-info">
-                                <a class="title" href="https://room.cmymoon.com/Firework_Simulator-main/index.html" target="_blank" rel="noopener nofollow">烟花</a>
-                                <a class="discription" href="https://room.cmymoon.com/Firework_Simulator-main/index.html" target="_blank" rel="noopener nofollow">看看那盛开的模样</a>
-                            </div>
-                            <div class="group-info-button">
-                                <a class="linkbutton" href="https://room.cmymoon.com/Firework_Simulator-main/index.html" target="_blank" rel="noopener nofollow">前往</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 祝福 -->
-                    <div class="group-item">
-                        <a class="group-item-icon" href="https://room.cmymoon.com/zhufu.html" target="_blank" rel="noopener nofollow">
-                            <img class="group-item-icon-img" src="img/zhufu.svg" alt="Zhufu-icon" title="Zhufu">
-                        </a>
-                        <div class="group-info-group">
-                            <div class="group-info">
-                                <a class="title" href="https://room.cmymoon.com/zhufu.html" target="_blank" rel="noopener nofollow">祝福 </a>
-                                <a class="discription" href="https://room.cmymoon.com/zhufu.html" target="_blank" rel="noopener nofollow">心之所向</a>
-                            </div>
-                            <div class="group-info-button">
-                                <a class="linkbutton" href="https://room.cmymoon.com/zhufu.html" target="_blank" rel="noopener nofollow">前往</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 音乐 -->
-                    <div class="group-item">
-                        <a class="group-item-icon" href="https://room.cmymoon.com/Music-2/index.html" target="_blank" rel="noopener nofollow">
-                            <img class="group-item-icon-img" src="img/music.svg" alt="Music-icon" title="Music"></a>
-                        <div class="group-info-group">
-                            <div class="group-info">
-                                <a class="title" href="https://room.cmymoon.com/Music-2/index.html" target="_blank" rel="noopener nofollow">Music
-                                            </a>
-                                <a class="discription" href="https://room.cmymoon.com/Music-2/index.html" target="_blank" rel="noopener nofollow">放松一下
-                                </a>
-                            </div>
-                            <div class="group-info-button">
-                                <a class="linkbutton" href="https://room.cmymoon.com/Music-2/index.html" target="_blank" rel="noopener nofollow">前往</a>
-                            </div>
-                        </div>
-                    </div>
-                        <!-- Sky -->
-                <div class="group-item">
-                <a class="group-item-icon" href="https://room.cmymoon.com/sky/index.html" target="_blank" rel="noopener nofollow">
-                    <img class="group-item-icon-img" src="img/sky.svg" alt="Sky-icon" title="Sky"></a>
-                <div class="group-info-group">
-                    <div class="group-info">
-                        <a class="title" href="https://room.cmymoon.com/sky/index.html" target="_blank" rel="noopener nofollow">天空有多高
-                                    </a>
-                        <a class="discription" href="https://room.cmymoon.com/sky/index.html" target="_blank" rel="noopener nofollow">一起探索
-                        </a>
-                    </div>
-                    <div class="group-info-button">
-                        <a class="linkbutton" href="https://room.cmymoon.com/sky/index.html" target="_blank" rel="noopener nofollow">前往</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-            <!--项目end -->
-            <div class="special-card">
-                <div class="special-card-left">
-                  <div class="tips">精选欣赏</div>
-                  <div class="title">祝福</div>
-                  <div class="discription">心之所想，心之所向。</div>
-                  <div class="button-group">
-                     <a class="button linkbutton" href="https://room.cmymoon.com/zhufu.html" target="_blank">立即前往</a>
-                    <!-- <span class="linkbotton-tips">嘿嘿</span> -->
-                  </div>
-                </div>
-                <img class="special-card-right" src="./img/zhufu.webp"></img>
-              </div>
-            <!-- 相册 -->
-            <div class="product-banner" id="相册" style="background-image: linear-gradient(180deg, #9f06f1 0%, #4c01bc 100%);">
-                <div class="banner-info need-padding">
-                    <span class="title">相册</span>
-                    <div class="banner-discription-group">
-                        <span class="description">留住那虚无缥缈的时间</span>
-                        <span class="description">发现生活的美好并将它记录下来。</span>
-                    </div>
-                    <div class="link-group">
-                        <a class="primary-button" target="_blank" href="https://room.cmymoon.com/picture/index.html">查看更多</a>
-                    </div>
-                </div>
-                <div class="banner-pic photos">
-                    <div class="banner-pic-img">
-                        <img src="./img/picture/0.webp" alt="loading">
-                        <img src="./img/picture/1.webp" alt="loading">
-                        <img src="./img/picture/2.webp" alt="loading">
-                        <img src="./img/picture/3.webp" alt="loading">
-                        <img src="./img/picture/4.webp" alt="loading">
-                        <img src="./img/picture/5.webp" alt="loading">
-                        <img src="./img/picture/6.webp" alt="loading">
-                        <img src="./img/picture/7.webp" alt="loading">
-                        <img src="./img/picture/8.webp" alt="loading">
-                    </div>
-                </div>
-            </div>
-            <!--相册end -->
-            <!-- 娱乐 -->
-    <div class="product-group need-padding" id="娱乐">
-        <h2 class="group-title">娱乐</h2>
-        <span class="group-description">试试自己的极限！</span>
-        <div class="group-items">
-
-            <!-- 魔方 -->
-            <div class="group-item">
-                <a class="group-item-icon" href="https://room.cmymoon.com/mofang.html" target="_blank" rel="noopener nofollow">
-                    <img class="group-item-icon-img" src="img/mofang.png" alt="Mofang-icon" title="Mofang">
-                </a>
-                <div class="group-info-group">
-                    <div class="group-info">
-                        <a class="title" href="https://room.cmymoon.com/mofang.html" target="_blank" rel="noopener nofollow">3D魔方</a>
-                        <a class="discription" href="https://room.cmymoon.com/mofang.html" target="_blank" rel="noopener nofollow">益智小游戏</a>
-                    </div>
-                    <div class="group-info-button">
-                        <a class="linkbutton" href="https://room.cmymoon.com/mofang.html" target="_blank" rel="noopener nofollow">前往</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2048 -->
-            <div class="group-item">
-                <a class="group-item-icon" href="https://room.cmymoon.com/2048.html" target="_blank" rel="noopener nofollow">
-                    <img class="group-item-icon-img" src="img/2048.svg" alt="2048-icon" title="2048">
-                </a>
-                <div class="group-info-group">
-                    <div class="group-info">
-                        <a class="title" href="https://room.cmymoon.com/2048.html" target="_blank" rel="noopener nofollow">2048</a>
-                        <a class="discription" href="https://room.cmymoon.com/2048.html target="_blank" rel="noopener nofollow">真的做不到2048吗</a>
-                    </div>
-                    <div class="group-info-button">
-                        <a class="linkbutton" href="https://room.cmymoon.com/2048.html" target="_blank" rel="noopener nofollow">前往</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Hextris -->
-            <div class="group-item">
-                <a class="group-item-icon" href="https://room.cmymoon.com/hextris.html" target="_blank" rel="noopener nofollow">
-                    <img class="group-item-icon-img" src="img/hextris.svg" alt="Hextris-icon" title="Hextris">
-                </a>
-                <div class="group-info-group">
-                    <div class="group-info">
-                        <a class="title" href="https://room.cmymoon.com/hextris.html" target="_blank" rel="noopener nofollow">Hextris</a>
-                        <a class="discription" href="https://room.cmymoon.com/hextris.html" target="_blank" rel="noopener nofollow">天天开心</a>
-                    </div>
-                    <div class="group-info-button">
-                        <a class="linkbutton" href="https://room.cmymoon.com/hextris.html" target="_blank" rel="noopener nofollow">前往</a>
-                    </div>
-                </div>
-            </div>
-         <!-- Aircraft-War-->
-            <div class="group-item">
-                <a class="group-item-icon" href="https://room.cmymoon.com/Aircraft-war/index.html" target="_blank" rel="noopener nofollow">
-                    <img class="group-item-icon-img" src="img/airplane.svg" alt="Aircraft-War-icon" title="Aircraft-War">
-                </a>
-                <div class="group-info-group">
-                    <div class="group-info">
-                        <a class="title" href="https://room.cmymoon.com/Aircraft-war/index.html" target="_blank" rel="noopener nofollow">Aircraft-War</a>
-                        <a class="discription" href="https://room.cmymoon.com/Aircraft-war/index.html" target="_blank" rel="noopener nofollow">飞飞飞</a>
-                    </div>
-                    <div class="group-info-button">
-                        <a class="linkbutton" href="https://room.cmymoon.com/Aircraft-war/index.html" target="_blank" rel="noopener nofollow">前往</a>
-                    </div>
-                </div>
-            </div>
-        <!-- 躲避障碍-->
-            <div class="group-item">
-                <a class="group-item-icon" href="https://room.cmymoon.com/Avoiding-obstacles.html" target="_blank" rel="noopener nofollow">
-                    <img class="group-item-icon-img" src="img/aircraft.svg" alt="Avoiding-obstacles-icon" title="Avoiding-obstacles">
-                </a>
-                <div class="group-info-group">
-                    <div class="group-info">
-                        <a class="title" href="https://room.cmymoon.com/Avoiding-obstacles.html" target="_blank" rel="noopener nofollow">躲避障碍</a>
-                        <a class="discription" href="https://room.cmymoon.com/Avoiding-obstacles.html" target="_blank" rel="noopener nofollow">环球飞行</a>
-                    </div>
-                    <div class="group-info-button">
-                        <a class="linkbutton" href="https://room.cmymoon.com/Avoiding-obstacles.html" target="_blank" rel="noopener nofollow">前往</a>
-                    </div>
-                </div>
-            </div>
-            <!-- 俄罗斯方块 -->
-            <div class="group-item">
-                <a class="group-item-icon" href="https://room.cmymoon.com/tetris/index.html" target="_blank" rel="noopener nofollow">
-                    <img class="group-item-icon-img" src="img/block.svg" alt="Tetris-icon" title="tetris">
-                </a>
-                <div class="group-info-group">
-                    <div class="group-info">
-                        <a class="title" href="https://room.cmymoon.com/tetris/index.html" target="_blank" rel="noopener nofollow">俄罗斯方块</a>
-                        <a class="discription" href="https://room.cmymoon.com/tetris/index.html" target="_blank" rel="noopener nofollow">重返少年时光</a>
-                    </div>
-                    <div class="group-info-button">
-                        <a class="linkbutton" href="https://room.cmymoon.com/tetris/index.html" target="_blank" rel="noopener nofollow">前往</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+          <article class="thumb img-area">
+           <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/6.webp" >
+           <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/6.webp"   />
+           </a> 
+           <h2>06</h2>
+           <p>2024年03月5日</p>
+           <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+           </article>
+ 
+           <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/7.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/7.webp"   />
+            </a> 
+            <h2>07</h2>
+            <p>2024年03月5日</p>
+            <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+            </article>    
             
-        <!-- 娱乐结束 -->
+           <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/8.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/8.webp"   />
+            </a> 
+            <h2>08</h2>
+            <p>2024年03月5日</p>
+            <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+            </article> 
+            
+           <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/9.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/9.webp"   />
+            </a> 
+            <h2>09</h2>
+            <p>2024年03月5日</p>
+            <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+            </article> 
 
-            <!-- AI-->
-            <div class="product-banner" id="AI" style="background-image: linear-gradient(180deg, #d94bee 0%, #8909f1 100%);">
-                <div class="banner-info need-padding">
-                    <span class="title">AI模型</span>
-                    <div class="banner-discription-group">
-                        <span class="description">基于ChatGPT-Next-Web项目搭建</span>
-                        <span class="description">在未来的时间中或许会一步一步的感受AI科技的进步。</span>
-                    </div>
-                    <div class="link-group">
-                        <a class="primary-button" target="_blank" href="https://chat.cmymoon.com/">点击进入</a>
-                    </div>
-                </div>
-                <div class="banner-pic">
-                    <img class="banner-pic-img" src="img/zuji.png" alt="banner image">
-                </div>
-            </div>
-            <!--AIend -->
+           <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/10.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/10.webp"   />
+            </a> 
+            <h2>10</h2>
+            <p>2024年03月5日</p>
+            <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+            </article> 
 
-           <!--其他项目 -->
-           <div class="product-group need-padding" id="项目">
-            <h2 class="group-title">其他项目</h2>
-            <span class="group-description">一些简单的项目</span>
-            <div class="group-items">
-                   <!-- ToDoList -->
-                    <div class="group-item">
-                        <a class="group-item-icon" href="https://room.cmymoon.com/TodoList/index.html" target="_blank" rel="noopener nofollow">
-                            <img class="group-item-icon-img" src="img/Todo.svg" alt="Todo-icon" title="Todo">
-                        </a>
-                        <div class="group-info-group">
-                            <div class="group-info">
-                                <a class="title" href="https://room.cmymoon.com/TodoList/index.html" target="_blank" rel="noopener nofollow">ToDoList</a>
-                                <a class="discription" href="https://room.cmymoon.com/TodoList/index.html" target="_blank" rel="noopener nofollow">事件清单</a>
-                            </div>
-                            <div class="group-info-button">
-                                <a class="linkbutton" href="https://room.cmymoon.com/TodoList/index.html" target="_blank" rel="noopener nofollow">前往</a>
-                            </div>
-                        </div>
-                    </div>
+            <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/11.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/11.webp"   />
+            </a> 
+            <h2>11</h2>
+            <p>2024年03月5日</p>
+            <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+            </article>            
 
-                
-                <!-- 元素周期表 -->
-                <div class="group-item">
-                    <a class="group-item-icon" href="https://room.cmymoon.com/yuansu.html" target="_blank" rel="noopener nofollow">
-                        <img class="group-item-icon-img" src="img/yuansu.svg" alt="Yuansu-icon" title="Yuansu">
-                    </a>
-                    <div class="group-info-group">
-                        <div class="group-info">
-                            <a class="title" href="https://room.cmymoon.com/yuansu.html" target="_blank" rel="noopener nofollow">元素周期表</a>
-                            <a class="discription" href="https://room.cmymoon.com/yuansu.html" target="_blank" rel="noopener nofollow">化学的魅力</a>
-                        </div>
-                        <div class="group-info-button">
-                            <a class="linkbutton" href="https://room.cmymoon.com/yuansu.html" target="_blank" rel="noopener nofollow">前往</a>
-                        </div>
-                    </div>
-                </div>
-                              
-                <!-- 新年倒计时 -->
-                <div class="group-item">
-                    <a class="group-item-icon" href="https://room.cmymoon.com/xinnian.html" target="_blank" rel="noopener nofollow">
-                        <img class="group-item-icon-img" src="img/dao.svg" alt="Xinnian-icon" title="Xinnian">
-                    </a>
-                    <div class="group-info-group">
-                        <div class="group-info">
-                            <a class="title" href="https://room.cmymoon.com/xinnian.html" target="_blank" rel="noopener nofollow">新年倒计时</a>
-                            <a class="discription" href="https://room.cmymoon.com/xinnian.html" target="_blank" rel="noopener nofollow">时间在流逝</a>
-                        </div>
-                        <div class="group-info-button">
-                            <a class="linkbutton" href="https://room.cmymoon.com/xinnian.html" target="_blank" rel="noopener nofollow">前往</a>
-                        </div>
-                    </div>
-                </div>
-                 <!-- Win12 -->
-                <div class="group-item">
-                    <a class="group-item-icon" href="https://room.cmymoon.com//win12-main/index.html" target="_blank" rel="noopener nofollow">
-                        <img class="group-item-icon-img" src="img/windows.svg" alt="Windows-icon" title="Win12">
-                    </a>
-                    <div class="group-info-group">
-                        <div class="group-info">
-                            <a class="title" href="https://room.cmymoon.com//win12-main/index.html" target="_blank" rel="noopener nofollow">Win12</a>
-                            <a class="discription" href="https://room.cmymoon.com//win12-main/index.html" target="_blank" rel="noopener nofollow">网页版超前更新</a>
-                        </div>
-                        <div class="group-info-button">
-                            <a class="linkbutton" href="https://room.cmymoon.com//win12-main/index.html" target="_blank" rel="noopener nofollow">前往</a>
-                        </div>
-                    </div>
-                </div>
-               
-                <!-- <div class="group-item">
-                    <a class="group-item-icon" href="https://lead.cmymoon.com/" target="_blank" rel="noopener nofollow">
-                        <img class="group-item-icon-img" src="img/daohang.svg" alt="daohang-icon" title="Daohang">
-                    </a>
-                    <div class="group-info-group">
-                        <div class="group-info">
-                            <a class="title" href="https://lead.cmymoon.com/" target="_blank" rel="noopener nofollow">备用导航页</a>
-                            <a class="discription" href="https://lead.cmymoon.com/" target="_blank" rel="noopener nofollow">后背隐藏能源 </a>
-                        </div>
-                        <div class="group-info-button">
-                            <a class="linkbutton" href="https://lead.cmymoon.com/" target="_blank" rel="noopener nofollow">前往</a>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- Web多端展示 -->
-                <div class="group-item">
-                    <a class="group-item-icon" href="https://room.cmymoon.com/web-multiterminal-preview/index.html" target="_blank" rel="noopener nofollow">
-                        <img class="group-item-icon-img" src="img/zhanshi.svg" alt="zhanshi-icon" title="Zhanshi">
-                    </a>
-                    <div class="group-info-group">
-                        <div class="group-info">
-                            <a class="title" href="https://room.cmymoon.com/web-multiterminal-preview/index.html" target="_blank" rel="noopener nofollow">Web多端展示 </a>
-                            <a class="discription" href="https://room.cmymoon.com/web-multiterminal-preview/index.html" target="_blank" rel="noopener nofollow">Web多端展示 </a>
-                        </div>
-                        <div class="group-info-button">
-                            <a class="linkbutton" href="https://room.cmymoon.com/web-multiterminal-preview/index.html" target="_blank" rel="noopener nofollow">前往</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!--项目end -->
+           <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/12.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/12.webp"   />
+            </a> 
+            <h2>12</h2>
+            <p>2024年03月5日</p>
+            <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+            </article> 
 
-                <!-- Moon的小屋 -->
-                <div class="product-banner" id="小屋" style="background-image: linear-gradient(180deg, #f74943 0%,#f79676  100%);">
-                    <div class="banner-info need-padding">
-                        <span class="title Englishfont">Moonの小屋</span>
-                        <div class="banner-discription-group">
-                            <span class="description Englishfont">Moon的<span class="inline-word">秘密基地</span></span>
-                            <span class="description">放置一些<span class="inline-word">有趣的、新奇的</span></span>
-                        </div>
-                        <div class="link-group">
-                            <a class="primary-button" target="_blank" href="https://room.cmymoon.com/">查看更多</a>
-                        </div>
-                    </div>
-                    <div class="banner-pic">
-                        <img class="banner-pic-img" src="img/room.webp" alt="banner image">
-                    </div>
-                </div>
-                <!-- 小屋end -->
+           <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/13.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/13.webp"   />
+            </a> 
+            <h2>13</h2>
+            <p>2024年03月5日</p>
+            <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+            </article> 
 
-     <!--社交 -->
-    <div class="product-group need-padding contact" id="社交">
-        <h2 class="group-title">社交</h2>
-        <span class="group-description">我常用的社交软件，你可以通过以下方式联系我</span>
+            <article class="thumb img-area">
+              <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/14.webp" >
+              <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/14.webp"   />
+              </a> 
+              <h2>14</h2>
+              <p>2024年03月5日</p>
+              <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+              </article> 
+              
+           <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/15.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/15.webp"   />
+            </a> 
+            <h2>15</h2>
+            <p>2024年03月5日</p>
+            <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+            </article> 
 
-        <div class="icons group-items">
+           <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/17.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/17.webp"   />
+            </a> 
+            <h2>16</h2>
+            <p>2024年03月5日</p>
+            <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+            </article> 
+            
+           <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/18.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/18.webp"   />
+            </a> 
+            <h2>17</h2>
+            <p>2024年03月5日</p>
+            <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+            </article> 
+            
+            <article class="thumb img-area">
+              <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/19.webp" >
+              <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/19.webp"   />
+              </a> 
+              <h2>18</h2>
+              <p>2024年03月5日</p>
+              <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+              </article>    
+              
+            <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/21.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/21.webp"   />
+            </a> 
+            <h2>19</h2>
+            <p>2024年03月5日</p>
+            <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+            </article> 
 
-            <!-- QQ -->
-            <div class="group-item">
-                <a class="group-item-icon" href="https://qm.qq.com/q/jZlErQKuxW" target="_blank" rel="noopener nofollow">
-                    <img class="group-item-icon-img" src="img/QQ.svg" alt="QQ-icon" title="QQ">
-                </a>
-                <div class="group-info-group">
-                    <div class="group-info">
-                        <a class="title" href="https://qm.qq.com/q/jZlErQKuxW" target="_blank" rel="noopener nofollow">QQ</a>
-                        <a class="discription" href="https://qm.qq.com/q/jZlErQKuxW" target="_blank" rel="noopener nofollow">QQ号：1171947030</a>
-                    </div>
-                    <div class="group-info-button">
-                        <a class="linkbutton" href="https://qm.qq.com/q/jZlErQKuxW" target="_blank" rel="noopener nofollow">添加</a>
-                    </div>
-                </div>
-            </div>
+            <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/22.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/22.webp"   />
+            </a> 
+            <h2>20</h2>
+            <p>2024年03月5日</p>
+            <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+            </article>            
+            
+           <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/24.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/24.webp"   />
+            </a> 
+            <h2>21</h2>
+            <p>2024年03月5日</p>
+            <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+            </article>     
+            
+            <article class="thumb img-area">
+              <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/25.webp" >
+              <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/25.webp"   />
+              </a> 
+              <h2>22</h2>
+              <p>2024年03月5日</p>
+              <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+              </article>  
+              
+            <article class="thumb img-area">
+              <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/3.webp" >
+              <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/3.webp"   />
+              </a> 
+              <h2>23</h2>
+              <p>2024年03月5日</p>
+              <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+              </article>    
 
-            <!-- 微信 -->
-            <div class="group-item">
-                <a class="group-item-icon" href="https://picture.cmymoon.com//social/Wechat.jpg" target="_blank" rel="noopener nofollow">
-                    <img class="group-item-icon-img" src="img/wechat.svg" alt="Wechat-icon" title="Wechat">
-                </a>
-                <div class="group-info-group">
-                    <div class="group-info">
-                        <a class="title" href="https://picture.cmymoon.com//social/Wechat.jpg" target="_blank" rel="noopener nofollow">微信</a>
-                        <a class="discription" href="https://picture.cmymoon.com//social/Wechat.jpg" target="_blank" rel="noopener nofollow">微信号：CMYS030314</a>
-                    </div>
-                    <div class="group-info-button">
-                        <a class="linkbutton" href="https://picture.cmymoon.com//social/Wechat.jpg" target="_blank" rel="noopener nofollow">添加</a>
-                    </div>
-                </div>
-            </div>
+           <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/background/26.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/background/26.webp"   />
+            </a> 
+            <h2>24</h2>
+            <p>2024年03月5日</p>
+            <li class="tag-categorys"><a href="./scenery/index.html">动漫风景</a></li>
+            </article>
 
-
-            <!-- 公众号 -->
-            <div class="group-item">
-                <a class="group-item-icon" href="https://picture.cmymoon.com//social/Gongzhong.jpg" target="_blank" rel="noopener nofollow">
-                    <img class="group-item-icon-img" src="img/wechat-2.svg" alt="offical accounts-icon" title="offical accounts">
-                </a>
-                <div class="group-info-group">
-                    <div class="group-info">
-                        <a class="title" href="https://picture.cmymoon.com//social/Gongzhong.jpg" target="_blank" rel="noopener nofollow">公众号</a>
-                        <a class="discription" href="https://picture.cmymoon.com//social/Gongzhong.jpg" target="_blank" rel="noopener nofollow">公众号：Sea the moon</a>
-                    </div>
-                    <div class="group-info-button">
-                        <a class="linkbutton" href="https://picture.cmymoon.com//social/Gongzhong.jpg" target="_blank" rel="noopener nofollow">关注</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- 邮箱 -->
-            <div class="group-item">
-                <a class="group-item-icon" href="mailto:moon@cmymoon.com" target="_blank" rel="noopener nofollow">
-                    <img class="group-item-icon-img" src="img/mail.svg" alt="mail-icon" title="mail">
-                </a>
-                <div class="group-info-group">
-                    <div class="group-info">
-                        <a class="title" href="mailto:moon@cmymoon.com" target="_blank" rel="noopener nofollow">邮箱</a>
-                        <a class="discription" href="mailto:moon@cmymoon.com" target="_blank" rel="noopener nofollow">邮箱：moon@cmymoon.com</a>
-                    </div>
-                    <div class="group-info-button">
-                        <a class="linkbutton" href="mailto:moon@cmymoon.com" target="_blank" rel="noopener nofollow">发送</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- bilibili -->
-            <!-- <div class="group-item">
-        <a class="group-item-icon" href="https://space.bilibili.com/446753369" target="_blank" rel="noopener nofollow">
-            <svg class="icons group-item-icon-img">
-    <use xlink:href="#icon-bilibili"></use>
-  </svg>
-        </a>
-        <div class="group-info-group">
-            <div class="group-info">
-                <a class="title" href="https://space.bilibili.com/446753369" target="_blank" rel="noopener nofollow">哔哩哔哩</a>
-                <a class="discription" href="https://space.bilibili.com/446753369" target="_blank" rel="noopener nofollow">小破站首页，没什么可看的。</a>
-            </div>
-            <div class="group-info-button">
-                <a class="linkbutton" href="https://space.bilibili.com/446753369" target="_blank" rel="noopener nofollow">查看</a>
-            </div>
-        </div>
-    </div> -->
-                      <!-- GitHub -->
-                      <div class="group-item">
-                        <a class="group-item-icon" href="https://github.com/Monthpity" target="_blank" rel="noopener nofollow">
-                            <img class="group-item-icon-img" src="img/github.svg" alt="github-icon" title="github">
-                        </a>
-                        <div class="group-info-group">
-                            <div class="group-info">
-                                <a class="title" href="https://github.com/Monthpity" target="_blank" rel="noopener nofollow">GitHub</a>
-                                <a class="discription" href="https://github.com/Monthpity" target="_blank" rel="noopener nofollow">GitHub首页</a>
-                            </div>
-                            <div class="group-info-button">
-                                <a class="linkbutton" href="https://github.com/Monthpity" target="_blank" rel="noopener nofollow">查看</a>
-                            </div>
-                        </div>
-                    </div>      
-                </div>
-            </div>
-    <!-- 社交end -->   
-                <!-- 技能 -->
-                <div class="product-banner" id="技能" style="background-image: linear-gradient(180deg, #2b80ff 0%, #7b04e2 100%);">
-                    <div class="banner-info need-padding">
-                        <span class="title">技能</span>
-                        <div class="banner-discription-group">
-                            <span class="description">奇思妙想的<span class="inline-word">实现</span></span>
-                            <span class="description">离不开<span class="inline-word">技术</span></span>
-                        </div>
-                        <div class="link-group">
-                            <a class="primary-button" target="_blank" href="https://cmymoon.com/">查看更多</a>
-                        </div>
-                    </div>
-                    <div class="banner-pic">
-                        <img class="banner-pic-img" src="img/banner-skill.webp" alt="banner image">
-                    </div>
-                </div>
-                  <!-- 技能end -->
-
-
-                  <div class="avatar-discription">
-                    <div class="avatar-info">
-                        <img class="avatar-image" src="img/wolf-2.jpg">
-                        <span class="avatar-name">Moon</span>
-                        <span class="avatar-title Englishfont">Ordinary Student</span>
-                      </div>
-                    <span class="avatar-discription-text">            
-              <p>
-            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。<br>
-            <b>梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。</b>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>—————罗伯 · 舒乐</b>
-                </p>
-                    </span>
-                  </div>
-                  <div class="container">
-                    <div class="cloud front">
-                      <span class="left-front"></span>
-                      <span class="right-front"></span>
-                    </div>
-                    <span class="sun sunshine"></span>
-                    <span class="sun"></span>
-                    <div class="cloud back">
-                      <span class="left-back"></span>
-                      <span class="right-back"></span>
-                    </div>
-                  </div>
-            <!-- footer -->
-            <div class="footer" >
-                <div class="footer-content need-padding">
-                    <span class="info">Copyright © 2023 - 2024 by Moon </span>
-                    
-                        <!-- <a class="info" href="https:" target="_blank">2000</a> -->
-                        <a class="info" href="https://github.com/zhheo/HeoWeb" target="_blank"><b>个人主页基于主题：HeoWeb</b></a>
-                        <a class="info" href="https://cmymoon.com/" target="_blank"><b>Say hello to me @ Moon</b></a>
-                </div>
-            </div>
-        </body>
-        <script src="js/simpleParallax.min.js"></script>
-        <!-- <script src="js/main.js"></script>  -->
-        <script src="js/dianjilizi.js"></script>
-        <script src="js/piaodai.js"></script>
-        <!-- <script src="js/snow.js"></script> -->
-        <!-- <script src="js/texiao.js"></script> -->
-        <script src="js/main.js.obfuscated.js"></script>  
-        <!--落叶效果-->
-			<!-- <script src="js/su.js"></script>
-            <script type="text/javascript">
-                jQuery(document).ready(function($) {
-                    $('body').wpSuperSnow({
-                        flakes: ['./img/image/001.png', './img/image/002.png', './img/image/003.png',
-                            './img/image/004.png', './img/image/005.png', './img/image/006.png',
-                            './img/image/007.png', './img/image/008.png'
-                        ],
-                        totalFlakes: '100',
-                        zIndex: '999999999',
-                        maxSize: '30',
-                        maxDuration: '50',
-                        useFlakeTrans: false
-                    });
-                });
-            </script> -->
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+            <article class="thumb img-area">
+              <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/life/8.webp" >
+              <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/life/8.webp"   />
+              </a> 
+              <h2>经贸操场</h2>
+              <p>2024年05月20日<br>
+                天行健，君子以自强不息。
+              </p>
+              <li class="tag-categorys"><a href="./life/index.html">生活点滴</a></li>
+              </article>
     
+            <article class="thumb img-area">
+              <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/life/7.webp" >
+              <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/life/7.webp"   />
+              </a> 
+              <h2>经贸晚霞</h2>
+              <p>2024年05月20日<br>
+                莫道桑榆晚，为霞尚满天。
+              </p>
+              <li class="tag-categorys"><a href="./life/index.html">生活点滴</a></li>
+              </article>
+
+            <article class="thumb img-area">
+              <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/life/6.webp" >
+              <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/life/6.webp"   />
+              </a> 
+              <h2>经贸街道</h2>
+              <p>2024年05月18日<br>
+                时过境迁！
+              </p>
+              <li class="tag-categorys"><a href="./life/index.html">生活点滴</a></li>
+              </article>
+
+            <article class="thumb img-area">
+              <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/life/5.webp" >
+              <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/life/5.webp"   />
+              </a> 
+              <h2>家</h2>
+              <p>2024年05月3日<br>
+                莺迁仁里，燕贺德邻，恭贺迁居之喜，室染秋香之气。
+              </p>
+              <li class="tag-categorys"><a href="./life/index.html">生活点滴</a></li>
+              </article>
+
+          <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/life/4.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/life/4.webp"   />
+            </a> 
+            <h2>家</h2>
+            <p>2024年05月3日<br>
+              残门锈锁久未开，灰砖小径覆干苔。</p>
+            <li class="tag-categorys"><a href="./life/index.html">生活点滴</a></li>
+            </article>
+
+
+            <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/life/3.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif'; this.onerror=null" data-src="https://picture.cmymoon.com/life/3-1.webp" />
+            </a> 
+            <h2>经贸街道</h2>
+            <p>2023年11月29日</p>
+            <li class="tag-categorys"><a href="./life/index.html">生活点滴</a></li>
+            </article>
+
+          <article class="thumb img-area">
+          <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/life/1.webp" >
+          <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/life/1.webp"   />
+          </a> 
+          <h2>博物馆</h2>
+          <p>2023年10月10日</p>
+          <li class="tag-categorys"><a href="./life/index.html">生活点滴</a></li>
+          </article>
+
+
+          <article class="thumb img-area">
+            <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/life/2.webp" >
+            <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/life/2.webp"   />
+            </a> 
+            <h2>郑工</h2>
+            <p>2023年07月17日</p>
+            <li class="tag-categorys"><a href="./life/index.html">生活点滴</a></li>
+            </article>
+
+            <article class="thumb img-area">
+              <a class="image my-photo"  alt="loading" href="https://picture.cmymoon.com/life/0.webp" >
+              <img class="zmki_px  my-photo" onerror="this.src='./images/loading.gif';this.onerror=null" data-src="https://picture.cmymoon.com/life/0.webp"   />
+              </a> 
+              <h2>小镇</h2>
+              <p>2023年07月6日</p>
+              <li class="tag-categorys"><a href="./life/index.html">生活点滴</a></li>
+              </article>
+      </div>
+   </div>
+</div>
+
+    
+    <!-- Footer -->
+    <footer id="footer" class="panel">
+      <div class="inner split">
+        <div class="inner split">
+        <div>
+            <section>
+              <h2>关于Moon的相册</h2>
+              <p>不是每个人都能成为摄影师，但好的摄影作品可以出自任何人。<br />我最喜欢摄影中你无法预期的下一刻。</p>
+            </section>
+         
+
+          <section style="margin-bottom: 1.8rem;">
+            <h2>联系我</h2>
+            <ul class="icons">	
+              <li><a href="https://www.cmymoon.com"  target="_blank" class="iconfont faa-parent animated-hove"><i class="fas fa-home faa-vertical"></i></a></li>
+              <li><a href="https://github.com/Monthpity/"  target="_blank" class="iconfont faa-parent animated-hove"><span class="fab fa-github faa-vertical"></span></a></li>
+              <li><a href="https://cmymoon.com"  target="_blank" class="iconfont faa-parent animated-hove"><span class="fas fa-blog faa-ring"></span></a></li>
+          </section> 
+          
+          <!-- <section>
+            <ul class="icons">
+              <li><a href="https://gitee.com/wrongcode" class="icon brands fa-github" target="_blank"><span
+                    class="label">Gitee</span></a></li>
+              <li><a href="https://github.com/Monthpity/"  target="_blank"><span
+                    class="label fab fa-github"></span></a></li>
+            </ul>
+          </section> -->
+          <p class="copyright"> &copy; 2024 <a href="https://github.com/Monthpity"> &middot; Monthpity</a></p>
+        </div>
+    
+      </div>
+    </div>
+  </div>
+    </footer>
+ 
+
+  <script type="text/javascript">
+    function isInSight(el) {
+      const bound = el.getBoundingClientRect();
+      const clientHeight = window.innerHeight;
+      //如果只考虑向下滚动加载
+      //const clientWidth=window.innerWeight;
+      return bound.top <= clientHeight + 100;
+    }
+    
+    let index = 0;
+    function checkImgs() {
+      const imgs = document.querySelectorAll('.my-photo');
+      for (let i = index; i < imgs.length; i++) {
+        if (isInSight(imgs[i])) {
+          loadImg(imgs[i]);
+          index = i;
+        }
+      }
+      // Array.from(imgs).forEach(el => {
+      //   if (isInSight(el)) {
+      //     loadImg(el);
+      //   }
+      // })
+    }
+    
+    function loadImg(el) {
+      if (!el.src) {
+        const source = el.dataset.src;
+        el.src = source;
+      }
+    }
+    
+    function throttle(fn, mustRun = 10) {
+      const timer = null;
+      let previous = null;
+      return function() {
+        const now = new Date();
+        const context = this;
+        const args = arguments;
+        if (!previous) {
+          previous = now;
+        }
+        const remaining = now - previous;
+        if (mustRun && remaining >= mustRun) {
+          fn.apply(context, args);
+          previous = now;
+        }
+      }
+    }
+         </script>
+          <script>
+        window.onload=checkImgs;
+        window.onscroll = throttle(checkImgs);
+      </script>
+   
+
+  <!-- Scripts -->
+  <!-- <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/jquery.min.js"></script> -->
+  <script src="./js/jquery.min.js"></script>
+  <!-- <script
+    src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/jquery.poptrox.min.js"></script> -->
+    <script src="./js/jquery.poptrox.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/browser.min.js"></script> -->
+  <script src="./js/browser.min.js"></script>
+  <!-- <script
+    src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/breakpoints.min.js"></script> -->
+    <script src="./js/breakpoints.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/util.js"></script> -->
+  <script src="./js/util.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/main.js"></script> -->
+  <script src="./js/main.js"></script>
+  <script src="./js/font_1635479_m8o2ir6mitf.js"></script>
+</body>
+
 </html>
