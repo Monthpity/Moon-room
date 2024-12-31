@@ -107,12 +107,15 @@ li {
 }
 
 .zmki_px {
-  border: 0;
-  height: 100%;
-  left: 0;
+  border: 3px solid var(--heo-white); /* 添加边框 */
+  border-radius: 15px; /* 圆角 */
+  padding: 0; /* 确保没有内边距 */
+  margin: 0; /* 确保没有外边距 */
+  height: calc(100% - 10px); /* 调整高度以适应边框和间隔 */
+  width: calc(100% - 10px); /* 调整宽度以适应边框和间隔 */
+  left: 5px; /* 调整位置以适应边框和间隔 */
+  top: 5px; /* 调整位置以适应边框和间隔 */
   position: absolute;
-  top: 0;
-  width: 100%;
   object-fit: cover;
   cursor: pointer;
   outline: 0px;
@@ -327,10 +330,6 @@ menu,
 nav,
 section {
   display: block;
-}
-
-body {
-  line-height: 1;
 }
 
 ol,
@@ -1773,7 +1772,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
-  background: rgba(18, 18, 18, 0.8);
+  background: rgba(18, 18, 18, 0.5); /* 设置为纯透明 */
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: blur(20px);
   top: calc(100vh - 80px);
@@ -2000,6 +1999,7 @@ li.category-level-0.category-parent {
   opacity: 1;
   overflow: hidden;
   position: relative;
+ 
 }
 
 #main .thumb:after {
@@ -2089,7 +2089,6 @@ body.is-preload #main .thumb {
   transition-delay: 2.525s;
   height: calc(40vh - 2em);
   min-height: 20em;
-  width: 25%;
 }
 
 #main .thumb:nth-child(1) {
@@ -2430,6 +2429,12 @@ body.is-preload #main .thumb {
 
 #footer .copyright a {
   color: inherit;
+}
+
+#main .thumb:hover {
+  transform: translateY(-5px); /* 向上移动效果 */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 更明显的阴影 */
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* 平滑过渡效果 */
 }
 
 
