@@ -179,7 +179,7 @@ function renderColors() {
 
     DOM.colorGrid.innerHTML = filteredColors.map((color, index) => `
         <div id="color-card-${color.name}" class="color-card">
-            <div class="color-sample" style="background: ${color.gradient || color.hex};" onclick="openModal(${index})"></div>
+            <div class="color-sample" style="background: ${color.gradient || color.hex};" onclick="openModal(${colors.indexOf(color)})"></div>
             <div class="color-name">${state.currentLanguage === 'en' ? color.name : color.nameZh}</div>
             <div class="favorite-btn ${state.favorites.includes(color.name) ? 'active' : ''}" onclick="toggleFavorite('${color.name}', this)">
                 <svg viewBox="0 0 24 24">
