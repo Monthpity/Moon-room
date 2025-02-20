@@ -58,7 +58,7 @@
         </a>
     </td>
     <td valign="top">
-        <a target="_blank" href="https://music.cmymoon.com/">
+        <a target="_blank" href="https://room.cmymoon.com/Music/index.html">
             <p align="center">Music</p>
             <img src="./yulan/8.webp"/>
         </a>
