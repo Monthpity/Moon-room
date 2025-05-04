@@ -1,6 +1,6 @@
 # HeoMusic
 
-![](/img/HeoMusic3.webp)
+![](./img/HeoMusic3.webp)
 
 一个基于[Aplayer](https://github.com/DIYgod/APlayer)和[MetingJS](https://github.com/metowolf/MetingJS)的静态音乐播放器
 
@@ -99,7 +99,7 @@ HeoMusic支持URL参数 `https://music.zhheo.com/?id=`+ id +`&server=` + server
 
 将`config.js.demo`文件重命名为`config.js`，并修改其中的配置
 
-![修改id和server](/img/help.webp)
+![修改id和server](./img/help.webp)
 
 直接访问首页`index.html`即可
 
